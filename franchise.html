@@ -7,7 +7,6 @@
     <title>창업문의 | 돈까스에 빠지다</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/franchise.css">
-    <link rel="stylesheet" href="css/mobile.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
@@ -321,40 +320,14 @@
         </div>
     </footer>
 
+    <script src="js/common.js"></script>
     <script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
                 navLinks.classList.remove('active');
             });
         });
-
-        // 헤더 스크롤 이벤트
-        const header = document.getElementById('main-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Reveal animations on scroll
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
         // FAQ accordion logic
         document.querySelectorAll('.faq-question').forEach(question => {

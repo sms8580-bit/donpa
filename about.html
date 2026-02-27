@@ -7,7 +7,6 @@
     <title>돈빠소개 | 돈까스에 빠지다</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/about.css">
-    <link rel="stylesheet" href="css/mobile.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
@@ -150,7 +149,7 @@
                 <div style="text-align: center; margin-bottom: 20px;">
                     <span class="subtitle" style="color: #C9720A;">OUR PHILOSOPHY</span>
                 </div>
-                <h2 class="philosophy-title">타협하지 않는 <em>세 가지 약속</em></h2>
+                <h2 class="philosophy-title">타협하지 않는<br><em>세 가지 약속</em></h2>
 
                 <div class="philosophy-grid">
                     <div class="philosophy-card">
@@ -202,41 +201,7 @@
         </div>
     </footer>
 
-    <script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // 헤더 스크롤 이벤트
-        const header = document.getElementById('main-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Reveal animations on scroll
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-    </script>
+    <script src="js/common.js"></script>
 </body>
 
 </html>

@@ -219,3 +219,11 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .hero { padding: 0 15px; }
+    .hero h1 { font-size: 6.5rem; font-weight: 900; }
+    .hero p { font-size: 1.1rem; }
+    .hero-content { max-width: 100%; text-align: center; }
+}
+

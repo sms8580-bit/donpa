@@ -7,7 +7,6 @@
     <title>메뉴소개 | K-돈까스</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/mobile.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
@@ -342,15 +341,8 @@
         </div>
     </footer>
 
+    <script src="js/common.js"></script>
     <script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
         // 메뉴 클릭 시 닫기
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
@@ -358,34 +350,6 @@
                 navLinks.classList.remove('active');
             });
         });
-
-        // 헤더 스크롤 이벤트
-        const header = document.getElementById('main-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Reveal animations on scroll
-        const revealObserver = new IntersectionObserver((entries) => {
-            let delay = 0;
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.classList.contains('menu-item')) {
-                        setTimeout(() => entry.target.classList.add('active'), delay);
-                        delay += 100;
-                    } else {
-                        entry.target.classList.add('active');
-                    }
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
         // Category Filter Logic
         const filterBtns = document.querySelectorAll('.filter-btn');

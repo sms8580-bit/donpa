@@ -8,7 +8,6 @@
     <meta name="description" content="전통의 맛과 현대적 감각이 어우러진 최고의 돈까스 프랜차이즈, K-돈까스입니다.">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/mobile.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
@@ -88,7 +87,7 @@
             <div class="container">
                 <div class="origin-header">
                     <span class="origin-subtitle">WHY US</span>
-                    <h2 class="origin-title">왜 <span class="highlight">돈까스에 빠지다</span>인가요?</h2>
+                    <h2 class="origin-title">왜<span class="highlight">돈까스에 빠지다</span>인가요?</h2>
                 </div>
 
                 <div class="process-grid">
@@ -140,7 +139,7 @@
             <div class="container">
                 <div class="origin-header">
                     <span class="origin-subtitle">MENU GALLERY</span>
-                    <h2 class="origin-title">눈으로 먼저 즐기는 <span class="highlight">맛의 감동</span></h2>
+                    <h2 class="origin-title">눈으로 먼저 즐기는<span class="highlight">맛의 감동</span></h2>
                 </div>
             </div>
             <div class="menu-slider-wrap">
@@ -201,16 +200,8 @@
         </div>
     </footer>
 
+    <script src="js/common.js"></script>
     <script>
-        // 모바일 메뉴 토글
-        const menuToggle = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
         // 배경 슬라이더
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
@@ -223,33 +214,6 @@
 
         setInterval(nextSlide, 5000); // 5초마다 전환
 
-        // 헤더 스크롤 이벤트
-        const header = document.getElementById('main-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Reveal animations on scroll
-        const revealCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
-
-        const revealObserver = new IntersectionObserver(revealCallback, {
-            threshold: 0.1
-        });
-
-        document.querySelectorAll('.reveal').forEach(el => {
-            revealObserver.observe(el);
-        });
     </script>
 </body>
 
