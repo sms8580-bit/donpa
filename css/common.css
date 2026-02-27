@@ -454,8 +454,6 @@ footer {
 
     /* 초기 메뉴 텍스트 숨김 (위로 올라가 있고 투명함) */
     .nav-links li {
-        animation: none;
-        /* PC 버전의 기본 애니메이션 상속을 차단 */
         opacity: 0;
         transform: translateY(-20px);
         transition: opacity 0.4s ease, transform 0.4s ease;
@@ -463,10 +461,8 @@ footer {
 
     /* 메뉴 활성화 시 텍스트 순차적으로 나타나는 타이밍 설정 (Keyframes 방식) */
     .nav-links.active li {
-        opacity: 1;
-        /* 모바일에서 링크 터치 시 animation forwards 상태가 풀려버려 0으로 돌아가는 iOS 버그 방지 */
-        transform: translateY(0);
-        animation: slideDownFadeIn 0.5s ease both;
+        animation: slideDownFadeIn 0.5s ease forwards;
+        opacity: 0;
     }
 
     .nav-links.active li:nth-child(1) {
@@ -495,16 +491,6 @@ footer {
         font-weight: 700;
         color: var(--text-color);
         /* 모바일 메뉴에서 글씨가 잘 보이도록 진한 색상 강제 지정 */
-        -webkit-tap-highlight-color: transparent;
-        /* 모바일 터치 시 생기는 기본 음영 제거 */
-    }
-
-    /* 모바일에서 링크를 터치했을 때 폰트가 투명해지거나 색상이 사라지는 버그 방지 */
-    .nav-links li a:active,
-    .nav-links li a:focus,
-    .nav-links li a:hover {
-        color: var(--text-color) !important;
-        opacity: 1 !important;
     }
 
     @keyframes slideDownFadeIn {
