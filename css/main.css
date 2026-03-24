@@ -155,12 +155,6 @@
     transition: height 0.1s linear;
 }
 
-@media (max-width: 768px) {
-    .hero-sticky-container {
-        padding: 0 5%;
-    }
-}
-
 .btn {
     display: inline-block;
     padding: 18px 40px;
@@ -291,8 +285,33 @@
 }
 
 @media screen and (max-width: 768px) {
+    /* 히어로: 풀블리드 + cover로 세로까지 채움(100% auto 시 아래가 검게 비는 현상 방지) */
     .hero {
-        padding: 0 15px;
+        padding: 0;
+    }
+
+    .hero-sticky-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .hero-slider {
+        background-color: #1a1510;
+    }
+
+    .hero-slider .slide {
+        background-size: cover;
+        background-position: center 42%;
+        background-repeat: no-repeat;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.35) 0%,
+            rgba(0, 0, 0, 0.55) 45%,
+            rgba(0, 0, 0, 0.72) 100%
+        );
     }
 
     .hero h1 {
@@ -309,6 +328,9 @@
     .hero-content {
         max-width: 100%;
         text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
     }
 }
 
@@ -416,7 +438,13 @@
 
 @media screen and (max-width: 480px) {
     .hero-sticky-container {
-        padding: 0 18px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .hero-content {
+        padding-left: 18px;
+        padding-right: 18px;
     }
 
     .scroll-indicator {
