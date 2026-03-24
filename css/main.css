@@ -1,14 +1,24 @@
-
-
 .hero {
     height: 100vh;
+    position: relative;
+    color: var(--white);
+}
+
+.hero.scroll-hero {
+    height: 200vh;
+    /* Scroll length for 2 phases */
+}
+
+.hero-sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    position: relative;
-    padding: 0 5%;
+    padding: 0 8%;
     overflow: hidden;
-    color: var(--white);
 }
 
 .hero-slider {
@@ -42,52 +52,113 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0) 100%);
     z-index: 1;
 }
 
 .hero-content {
-    text-align: left;
     z-index: 2;
-    max-width: 900px;
-    padding: 0;
-    animation: fadeInUp 1s ease-out forwards;
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hero-text-phase {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
 }
 
-.hero-tagline {
-    font-size: 1.5rem;
-    color: var(--white);
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-bottom: 10px;
-    display: block;
-    font-weight: 700;
+.hero-text-phase.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
 }
 
 .hero h1 {
-    font-size: 6.5rem;
+    font-size: 8rem;
+    /* Large impact font */
     line-height: 1.1;
-    margin-bottom: 25px;
-    word-break: keep-all;
-    font-weight: 700;
+    font-weight: 100;
+    /* Ultra thin for modern feel */
+    margin: 0;
+    display: block;
 }
 
-.hero p {
-    font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 40px;
+.hero h1 span {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Individual Letter Spacing for Alignment (Tuned for 8rem Extra Bold) */
+.hero-l1 {
+    letter-spacing: 0.04em;
+}
+
+/* 돈까스 - increase to match '충분해' width */
+.hero-l2 {
+    letter-spacing: 0;
+}
+
+/* 돈빠면 */
+.hero-l3 {
+    letter-spacing: 0.03em;
+}
+
+/* 충분해 - naturally the widest */
+
+.hero-l4 {
+    letter-spacing: 0.01em;
+}
+
+/* 정성을 다해 */
+.hero-l5 {
+    letter-spacing: 0.02em;
+}
+
+/* 직접 만드는 */
+.hero-l6 {
+    letter-spacing: 0;
+}
+
+/* 수제 돈까스 */
+
+.hero h1 .highlight {
+    color: var(--primary-color);
+}
+
+.hero h1 .highlight {
+    color: var(--primary-color);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 10;
+}
+
+.indicator-bar {
+    width: 100%;
+    height: 0%;
+    background: var(--primary-color);
+    transition: height 0.1s linear;
+}
+
+@media (max-width: 768px) {
+    .hero-sticky-container {
+        padding: 0 5%;
+    }
 }
 
 .btn {
@@ -98,7 +169,7 @@
     border-radius: 50px;
     font-weight: 600;
     transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(209, 77, 29, 0.3);
+    box-shadow: 0 4px 15px rgba(250, 166, 63, 0.3);
 }
 
 .desktop-only-btn {
@@ -114,7 +185,7 @@
 .btn:hover {
     background: var(--primary-hover);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(209, 77, 29, 0.4);
+    box-shadow: 0 6px 20px rgba(250, 166, 63, 0.4);
 }
 
 .section-menu-slider {
@@ -126,7 +197,7 @@
     width: 100%;
     max-width: var(--container-width);
 
-    margin: 50px auto 0;
+    margin: 20px auto 0;
 
     position: relative;
     overflow: hidden;
@@ -178,7 +249,6 @@
     flex-shrink: 0;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .menu-slide img {
@@ -221,9 +291,189 @@
 }
 
 @media screen and (max-width: 768px) {
-    .hero { padding: 0 15px; }
-    .hero h1 { font-size: 6.5rem; font-weight: 900; }
-    .hero p { font-size: 1.1rem; }
-    .hero-content { max-width: 100%; text-align: center; }
+    .hero {
+        padding: 0 15px;
+    }
+
+    .hero h1 {
+        font-size: clamp(4.25rem, 11vw + 1.25rem, 5.75rem);
+        line-height: 1.06;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
 }
 
+/* 메인 WHY US: 브랜드 톤앤매너(Orange/Brown) 반영 */
+.section-features {
+    background: #F5EDD8;
+    /* Warm ivory bg */
+    padding: 120px 0;
+}
+
+.section-features .origin-title {
+    color: #30221F;
+}
+
+.section-features .process-item {
+    background: #ffffff;
+    border: 1px solid rgba(48, 34, 31, 0.08);
+    /* Soft brown border */
+    padding: 50px 30px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center !important;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    color: #30221F;
+    /* Dark brown text */
+    box-shadow: 0 10px 30px rgba(48, 34, 31, 0.03);
+}
+
+/* Hover Interaction: Active card comes forward, others recede */
+.process-grid:hover .process-item:not(:hover) {
+    opacity: 0.5;
+    transform: scale(0.95);
+    filter: grayscale(0.5);
+}
+
+.process-item:hover {
+    background: #ffffff;
+    transform: scale(1.08);
+    z-index: 10;
+    box-shadow: 0 40px 80px rgba(48, 34, 31, 0.12);
+    border-color: #F26649;
+    /* Brand Orange */
+}
+
+.process-item .process-tag {
+    font-size: 0.8rem;
+    color: #A68D85;
+    /* Muted brown */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.process-item h4 {
+    font-size: 2.22rem;
+    color: #F26649 !important;
+    /* Brand Orange */
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+.process-item .quote-mark {
+    font-size: 1.5rem;
+    color: #F26649;
+    margin: 10px 0px;
+    /* Minimized vertical spacing for tight look */
+    opacity: 0.6;
+}
+
+.process-item p {
+    color: #30221F !important;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 600;
+    margin-bottom: 10px !important;
+    /* Remove default margins for symmetry */
+}
+
+.process-item .divider {
+    width: 60%;
+    height: 1px;
+    background: #F2E2C4;
+    /* Soft beige divider */
+    margin: 30px 0;
+}
+
+.process-item .sub-desc {
+    font-size: 0.9rem;
+    color: #8C7872;
+    /* Muted brown */
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+@media (min-width: 769px) {
+    .section-features .process-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-sticky-container {
+        padding: 0 18px;
+    }
+
+    .scroll-indicator {
+        right: 20px;
+        height: 100px;
+    }
+
+    .section-features {
+        padding: 80px 0;
+    }
+
+    .section-features .process-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .section-features .process-item {
+        padding: 40px 20px;
+    }
+
+    .section-features .process-item h4 {
+        font-size: 1.8rem;
+    }
+
+    .horizontal-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        gap: 20px;
+    }
+
+    .horizontal-item .process-icon {
+        font-size: 3.5rem;
+    }
+}
+
+/* 메인 WHY US: 가로형 레이아웃 */
+.horizontal-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    text-align: left !important;
+}
+
+.horizontal-item .process-icon {
+    font-size: 4.5rem;
+    margin: 0;
+    line-height: 1;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.process-content {
+    flex: 1;
+}
+
+.process-content h4 {
+    margin-top: 5px;
+}

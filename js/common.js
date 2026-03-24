@@ -18,16 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 2. 헤더 스크롤 이벤트
+    // 2. 헤더 스크롤 이벤트 및 로고 변환
     const header = document.getElementById('main-header');
+    const logoImg = document.querySelector('.logo img');
     if (header) {
-        window.addEventListener('scroll', () => {
+        const handleHeaderScroll = () => {
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
+                if (logoImg && !logoImg.src.includes('브라운')) logoImg.src = 'Image/돈빠_로고_브라운.png';
             } else {
                 header.classList.remove('scrolled');
+                if (logoImg && !logoImg.src.includes('화이트')) logoImg.src = 'Image/돈빠_로고_화이트.png';
             }
-        });
+        };
+        window.addEventListener('scroll', handleHeaderScroll);
+        handleHeaderScroll(); // 초기 실행
     }
 
     // 3. Reveal 애니메이션 공통 처리 (메뉴 페이지 딜레이 적용 포함)
@@ -42,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     entry.target.classList.add('active');
                 }
-                // 한 번 나타난 요소는 더 이상 관찰하지 않음
+                // 한 번 나타난 요소는 더 이상 관찰하지 않음 (기본 설정으로 원복)
                 observer.unobserve(entry.target);
             }
         });

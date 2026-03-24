@@ -1,10 +1,6 @@
-
-
 .franchise-contact {
-    background-color: #2C2016;
-
-    color: #F5EDD8;
-
+    background-color: #30221F;
+    color: #ffffff;
     padding: 120px 5%;
 }
 
@@ -24,25 +20,25 @@
 }
 
 .contact-title {
-    font-size: 3.0em;
+    font-size: 4.0em;
     line-height: 1.2;
+    margin-top: 30px;
     margin-bottom: 30px;
-    font-weight: 800;
+    font-weight: 100;
     letter-spacing: -2px;
 }
 
 .contact-title .highlight {
-    color: #C9720A;
+    color: #FAA63F;
     font-style: italic;
     display: inline-block;
     transform: skewX(-5deg);
-    margin-top: 10px;
 }
 
 .contact-desc {
     font-size: 1.15rem;
     line-height: 1.8;
-    color: rgba(245, 237, 216, 0.7);
+    color: rgba(255, 255, 255);
     margin-bottom: 60px;
     word-break: keep-all;
 }
@@ -63,13 +59,13 @@
 .info-icon {
     width: 54px;
     height: 54px;
-    background: rgba(201, 114, 10, 0.15);
-    border: 1px solid rgba(201, 114, 10, 0.3);
+    background: #ffffff;
+    border: none;
     border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #C9720A;
+    color: #F26649;
     font-size: 1.5rem;
 }
 
@@ -95,8 +91,8 @@
 }
 
 .hours-title {
-    color: #C9720A;
-    font-size: 1rem;
+    color: #ffffff;
+    font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 25px;
     letter-spacing: 1px;
@@ -120,20 +116,19 @@
 .contact-form-card {
     background: rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(245, 237, 216, 0.08);
-
     padding: 90px;
     border-radius: 40px;
 }
 
 .contact-form-card h3 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 100;
 }
 
 .contact-form-card .form-desc {
     font-size: 1rem;
-    color: rgba(245, 237, 216, 0.6);
+    color: rgba(255, 255, 255);
     margin-bottom: 45px;
     line-height: 1.7;
 }
@@ -150,7 +145,7 @@
 
 .contact-form-card .form-group label {
     display: block;
-    color: rgba(245, 237, 216, 0.9);
+    color: #FAA63F;
     font-size: 0.95rem;
     font-weight: 700;
     margin-bottom: 12px;
@@ -161,7 +156,7 @@
 .contact-form-card .form-group select {
     display: block;
     width: 100%;
-    background: rgba(44, 32, 22, 0.6);
+    background: rgba(48, 34, 31, 0.6);
     border: 1px solid rgba(245, 237, 216, 0.12);
     color: #F5EDD8;
     border-radius: 12px;
@@ -169,7 +164,6 @@
     font-size: 1rem;
     transition: var(--transition);
     appearance: none;
-    -webkit-appearance: none;
 }
 
 .contact-form-card .form-group select {
@@ -184,9 +178,9 @@
 .contact-form-card .form-group textarea:focus,
 .contact-form-card .form-group select:focus {
     outline: none;
-    background: rgba(44, 32, 22, 0.9);
-    border-color: #C9720A;
-    box-shadow: 0 0 0 4px rgba(201, 114, 10, 0.1);
+    background: rgba(48, 34, 31, 0.9);
+    border-color: #FAA63F;
+    box-shadow: 0 0 0 4px rgba(250, 166, 63, 0.1);
 }
 
 .form-checkbox {
@@ -206,13 +200,13 @@
 
 .form-checkbox label {
     font-size: 0.9rem;
-    color: rgba(245, 237, 216, 0.7);
+    color: rgba(255, 255, 255);
     line-height: 1.5;
     cursor: pointer;
 }
 
 .form-checkbox a {
-    color: #C9720A;
+    color: #F26649;
     text-decoration: underline;
 }
 
@@ -222,7 +216,7 @@
     font-size: 1.1rem;
     font-weight: 700;
     border: none;
-    background: #C9720A;
+    background: #FAA63F;
     color: #fff;
     border-radius: 12px;
     cursor: pointer;
@@ -230,15 +224,227 @@
 }
 
 .contact-form-card .btn-submit:hover {
-    background: #8B4513;
+    background: #F26649;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Franchise Cost Section */
+/* Franchise Cost Section */
+.franchise-cost {
+    padding: 60px 5% 100px;
+    background-color: #F5EDD8;
+}
+
+.cost-intro {
+    background-color: #30221F;
+    /* Dark brown for premium look */
+    padding: 60px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(250, 166, 63, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cost-intro-title {
+    font-size: 2.8rem;
+    font-weight: 100;
+    line-height: 1.3;
+    color: #ffffff;
+}
+
+.cost-intro-title .highlight {
+    color: #FAA63F;
+    font-weight: 100;
+    display: block;
+    font-size: 3.2rem;
+    margin-top: 10px;
+}
+
+.cost-intro-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 25px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.feature-item i {
+    color: #FAA63F;
+    font-size: 1.6rem;
+}
+
+/* Cost Accordion Styles */
+.cost-accordion {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    background: #FFF8EC;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(44, 32, 22, 0.05);
+}
+
+.cost-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 50px;
+    cursor: pointer;
+    background: #FFF8EC;
+    /* Warm cream background */
+    transition: var(--transition);
+}
+
+.cost-accordion-header:hover {
+    background: #FFF3E0;
+}
+
+.cost-accordion-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #30221F;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cost-accordion-title::before {
+    content: '';
+    width: 6px;
+    height: 24px;
+    background: #F26649;
+    border-radius: 3px;
+}
+
+.cost-icon {
+    font-size: 1.8rem;
+    color: #F26649;
+    transition: transform 0.4s ease;
+}
+
+.cost-accordion.active .cost-icon {
+    transform: rotate(45deg);
+}
+
+.cost-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #FFF8EC;
+    /* Matching background */
+}
+
+.cost-accordion.active .cost-accordion-content {
+    max-height: 1500px;
+    opacity: 1;
+    padding: 0 50px 50px;
+}
+
+/* Inner Table Content Styling */
+.cost-table-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.cost-standard {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+    background: #fdfdfd;
+    padding: 6px 15px;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.cost-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cost-table th {
+    background-color: #F5EDD8;
+    /* Header background color */
+    padding: 25px 30px;
+    text-align: center;
+    font-size: 1.05rem;
+    color: #30221F;
+    border-bottom: 2px solid #30221F;
+    vertical-align: middle;
+}
+
+.cost-table td {
+    padding: 28px 30px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.05rem;
+    color: #555;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.cost-table .strike {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 10px;
+}
+
+.cost-table .accent {
+    color: #F26649;
+    font-weight: 600;
+}
+
+.total-row {
+    background-color: #F5EDD8;
+}
+
+.total-row td {
+    font-weight: 700 !important;
+    font-size: 1.2rem;
+    color: #30221F !important;
+    border-top: 2px solid #30221F;
+    border-bottom: 2px solid #30221F;
+}
+
+.total-accent {
+    color: #F26649 !important;
+    font-size: 1.4rem !important;
+}
+
+.cost-note {
+    font-size: 0.95rem;
+    color: #888;
+    text-align: left;
+    margin-top: 15px;
+    line-height: 1.6;
 }
 
 .faq-section {
     padding: 100px 5%;
     background-color: #F2E2C4;
-
 }
 
 .faq-list {
@@ -258,24 +464,23 @@
     justify-content: space-between;
     align-items: center;
     padding: 35px 0;
-
     cursor: pointer;
     transition: var(--transition);
 }
 
 .faq-question:hover {
-    background: rgba(201, 114, 10, 0.03);
+    background: rgba(250, 166, 63, 0.03);
 }
 
 .faq-question span {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #2C2016;
+    color: #30221F;
 }
 
 .faq-icon {
     font-size: 1.5rem;
-    color: #C9720A;
+    color: #F26649;
     transition: transform 0.4s ease;
 }
 
@@ -303,7 +508,6 @@
 
 .faq-item.active .faq-icon {
     transform: rotate(45deg);
-
 }
 
 @media (max-width: 1100px) {
@@ -328,5 +532,435 @@
 
     .form-row {
         grid-template-columns: 1fr;
+    }
+
+    .cost-intro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 40px;
+        margin-bottom: 60px;
+    }
+
+    .cost-intro-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cost-table-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .cost-table-title {
+        font-size: 1.8rem;
+    }
+
+    .cost-table th,
+    .cost-table td {
+        padding: 12px 5px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    .total-accent {
+        font-size: 1.1rem !important;
+    }
+
+    .feature-item {
+        font-size: 1rem;
+    }
+
+    .cost-intro {
+        padding: 30px;
+    }
+
+    .cost-intro-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Process Section Slider Layout */
+.process-section {
+    padding: 120px 0 80px;
+    background-color: #F5EDD8;
+    overflow: hidden;
+}
+
+.process-flex-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    /* Removed padding to align perfectly with the box below */
+}
+
+.process-header-side {
+    flex: 0 0 350px;
+    text-align: left;
+}
+
+.process-quote {
+    font-size: 2.5rem;
+    color: rgba(242, 102, 73, 0.3);
+    display: block;
+    line-height: 1;
+    /* Balanced line-height */
+}
+
+.process-side-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin: 12px 0;
+    /* Restored some margin */
+    font-weight: 100;
+}
+
+.process-side-title .highlight {
+    color: #FAA63F;
+    /* Sub 1 Color */
+}
+
+.process-side-desc {
+    font-size: 1.15rem;
+    color: #666;
+    line-height: 1.5;
+    word-break: keep-all;
+    margin-bottom: 10px;
+    /* Restored some margin */
+}
+
+.process-slider-side {
+    flex: 1;
+    overflow-x: auto;
+    padding: 60px 0 30px;
+    /* Reduced vertical padding */
+    scrollbar-width: thin;
+    scrollbar-color: #F26649 rgba(0, 0, 0, 0.05);
+}
+
+.process-slider-side::-webkit-scrollbar,
+.table-responsive::-webkit-scrollbar {
+    height: 18px;
+    display: block;
+}
+
+.process-slider-side::-webkit-scrollbar-track,
+.table-responsive::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 12px;
+}
+
+.process-slider-side::-webkit-scrollbar-thumb,
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #e0d5c1;
+    border-radius: 12px;
+    border: 4px solid transparent;
+    background-clip: padding-box;
+}
+
+.process-slider-side::-webkit-scrollbar-thumb:hover,
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-color);
+}
+
+.process-slider-side::-webkit-scrollbar-button:single-button:horizontal:decrement,
+.table-responsive::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    height: 24px;
+    width: 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2330221F' d='M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z'/%3E%3C/svg%3E");
+    cursor: pointer;
+}
+
+.process-slider-side::-webkit-scrollbar-button:single-button:horizontal:increment,
+.table-responsive::-webkit-scrollbar-button:single-button:horizontal:increment {
+    height: 24px;
+    width: 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2330221F' d='M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z'/%3E%3C/svg%3E");
+    cursor: pointer;
+}
+
+.process-track {
+    display: flex;
+    gap: 30px;
+}
+
+.process-card {
+    flex: 0 0 320px;
+    height: 320px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.process-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    /* Softer shadow on hover */
+}
+
+/* Gradient-like progression for Steps 1-7 - Starting from light ivory */
+.process-track .process-card:nth-child(1) {
+    background-color: #FFFBF5;
+}
+
+.process-track .process-card:nth-child(2) {
+    background-color: #FFF5E7;
+}
+
+.process-track .process-card:nth-child(3) {
+    background-color: #FFEFD9;
+}
+
+.process-track .process-card:nth-child(4) {
+    background-color: #FFE9CC;
+}
+
+.process-track .process-card:nth-child(5) {
+    background-color: #FFE2B8;
+}
+
+.process-track .process-card:nth-child(6) {
+    background-color: #FFDBA4;
+}
+
+.process-track .process-card:nth-child(7) {
+    background-color: #FFD490;
+}
+
+.process-card-num {
+    position: absolute;
+    top: 15px;
+    /* Slightly lower for better circular fit */
+    left: 45px;
+    /* Slightly further in for better balance */
+    width: 36px;
+    height: 36px;
+    background: #F26649;
+    /* Sub 1 Color */
+    color: #ffffff;
+    font-size: 0.9rem;
+    /* Smaller font for smaller bubble */
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.process-card-icon {
+    font-size: 3.2rem;
+    color: #30221F;
+    /* Unified dark icon color */
+    margin-bottom: 12px;
+}
+
+.process-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #30221F;
+    /* Unified dark brown */
+    font-weight: 800;
+}
+
+.process-desc-main {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #30221F;
+    /* Unified dark brown */
+    margin-bottom: 8px;
+}
+
+.process-desc-sub {
+    font-size: 0.95rem;
+    color: #30221F;
+    /* Unified dark brown */
+    line-height: 1.6;
+    word-break: keep-all;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Grand Open Card Special Style */
+.process-card.grand-open {
+    background-color: #FAA63F !important;
+}
+
+@media screen and (max-width: 640px) {
+    .franchise-contact {
+        padding: 80px 20px;
+    }
+
+    .contact-grid {
+        gap: 60px;
+    }
+
+    .contact-info {
+        text-align: center;
+        align-items: center;
+    }
+
+    .contact-title {
+        font-size: 3.6rem !important;
+        letter-spacing: -1px;
+    }
+
+    .contact-desc {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .info-list {
+        align-items: flex-start;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .info-item {
+        flex-direction: row;
+        gap: 20px;
+        text-align: left;
+    }
+
+    .info-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+
+    .contact-form-card {
+        padding: 40px 25px !important;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .contact-form-card h3 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .contact-form-card .form-desc {
+        text-align: center;
+    }
+
+    .contact-form-card .form-group label {
+        text-align: left;
+        /* Keep labels left-aligned for form usability */
+    }
+
+    .cost-intro-title {
+        font-size: 1.6rem !important;
+    }
+
+    .cost-intro-title .highlight {
+        font-size: 2rem !important;
+    }
+
+    .cost-intro-features {
+        padding: 20px;
+    }
+
+    .process-flex-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .process-header-side {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .process-side-title {
+        font-size: 2.2rem;
+    }
+
+    .process-card {
+        flex: 0 0 280px;
+        height: 280px;
+    }
+
+    .cost-accordion-header {
+        padding: 25px 20px;
+    }
+
+    .cost-accordion-title {
+        font-size: 1.3rem;
+    }
+
+    .cost-accordion.active .cost-accordion-content {
+        padding: 0 20px 30px;
+    }
+
+    .faq-question span {
+        font-size: 0.95rem;
+    }
+
+    .hours-box {
+        display: none !important;
+    }
+
+    .contact-desc,
+    .contact-form-card .form-desc,
+    .contact-form-card h3 {
+        display: none !important;
+    }
+}
+
+.process-card.grand-open .process-card-num {
+    background-color: #F26649;
+}
+
+.process-card.grand-open h4,
+.process-card.grand-open .process-card-icon,
+.process-card.grand-open .process-desc-sub {
+    color: #ffffff;
+}
+
+@media (max-width: 1300px) {
+    .process-side-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    .process-flex-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 0 5%;
+    }
+
+    .process-header-side {
+        flex: 1;
+        width: 100%;
+        text-align: center;
+    }
+
+    .process-slider-side {
+        width: calc(100% + 5%);
+        margin-right: -5%;
+        padding-right: 5%;
+        padding-top: 40px;
     }
 }

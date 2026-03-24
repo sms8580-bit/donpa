@@ -13,14 +13,19 @@
 
 <body>
     <div class="top-bar">
-        <div class="info">성공 창업 문의 1522-7499</div>
+        <div class="info">성공 창업 문의 1522-7449</div>
         <div class="sns">
-            <a href="#">INSTAGRAM</a>
-            <a href="#">YOUTUBE</a>
+            <a href="https://www.instagram.com/don_bba/" target="_blank" rel="noopener noreferrer">
+                <i class="ri-instagram-line"></i> <span>인스타그램</span>
+            </a>
         </div>
     </div>
     <header id="main-header">
-        <div class="logo">돈까스에 빠지다</div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Image/돈빠_로고_화이트.png" alt="돈빠 로고">
+            </a>
+        </div>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
@@ -47,17 +52,35 @@
     </div>
 
     <main>
-        <section class="hero">
-            <div class="hero-slider">
-                <div class="slide active" style="background-image: url('Image/main_1.jpeg');"></div>
-                <div class="slide" style="background-image: url('Image/main_2.jpeg');"></div>
-            </div>
-            <div class="hero-overlay"></div>
+        <section class="hero scroll-hero">
+            <div class="hero-sticky-container">
+                <div class="hero-slider">
+                    <div class="slide active" style="background-image: url('Image/main_1.jpeg');"></div>
+                    <div class="slide" style="background-image: url('Image/main_2.jpeg');"></div>
+                </div>
+                <div class="hero-overlay"></div>
 
-            <div class="hero-content reveal">
-                <span class="hero-tagline">돈까스에 빠지다</span>
-                <h1>돈빠</h1>
-                <p>마음과 마음을 이어주는 맛있는 행복.<br>K-돈까스가 변화와 혁신으로 당신에게 다가갑니다.</p>
+                <div class="hero-content">
+                    <div class="hero-text-phase active" data-phase="1">
+                        <h1>
+                            <span class="hero-l1">돈<span class="highlight">까스</span></span><br>
+                            <span class="hero-l2"><span class="highlight">돈</span>빠<span
+                                    class="highlight">면</span></span><br>
+                            <span class="hero-l3"><span class="highlight">충분</span>해</span>
+                        </h1>
+                    </div>
+                    <div class="hero-text-phase" data-phase="2">
+                        <h1>
+                            <span class="hero-l4">정성을 다해</span><br>
+                            <span class="hero-l5">직접 만드는</span><br>
+                            <span class="hero-l6"><span class="highlight">수제 돈까스</span></span>
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator">
+                    <div class="indicator-bar"></div>
+                </div>
             </div>
         </section>
 
@@ -87,45 +110,60 @@
             <div class="container">
                 <div class="origin-header">
                     <span class="origin-subtitle">WHY US</span>
-                    <h2 class="origin-title">왜<span class="highlight">돈까스에 빠지다</span>인가요?</h2>
+                    <h2 class="origin-title">왜 <span class="highlight">돈빠</span> 일까요?</h2>
                 </div>
 
                 <div class="process-grid">
                     <div class="process-item">
-                        <div class="process-num">01</div>
-                        <i class="ri-trophy-line process-icon"></i>
-                        <h4>검증된 브랜드 파워</h4>
-                        <p>전국 가맹점 운영을 통해 이미 검증된 브랜드. 강한 고객 충성도와 높은 재방문율로 안정적인 매출 기반을 제공합니다.</p>
+                        <span class="process-tag">Cost Down</span>
+                        <h4>인건비 걱정 無</h4>
+                        <div class="quote-mark">“</div>
+                        <p>
+                            주방장이 필요없는 원팩 시스템으로<br>
+                            노동 강도를 혁신적으로 낮췄습니다.
+                        </p>
+                        <div class="quote-mark">”</div>
+                        <div class="divider"></div>
+                        <span class="sub-desc">홀 인력이 없어도<br>운영 가능한 최적화 시스템</span>
                     </div>
+
                     <div class="process-item">
-                        <div class="process-num">02</div>
-                        <i class="ri-box-3-line process-icon"></i>
-                        <h4>본사 직영 물류 시스템</h4>
-                        <p>식자재 구매부터 배송까지 본사가 직접 관리합니다. 전국 어느 가맹점에서나 동일한 품질의 재료를 안정적으로 공급받을 수 있습니다.</p>
+                        <span class="process-tag">High Quality</span>
+                        <h4>압도적 퀄리티</h4>
+                        <div class="quote-mark">“</div>
+                        <p>
+                            업계 유일 수제돈까스 완제품 공급<br>
+                            100% 국내산 등심과 안심만 사용
+                        </p>
+                        <div class="quote-mark">”</div>
+                        <div class="divider"></div>
+                        <span class="sub-desc">습식 무방부제 빵가루와<br>자연산 치즈가 만드는 깊은 맛</span>
                     </div>
+
                     <div class="process-item">
-                        <div class="process-num">03</div>
-                        <i class="ri-restaurant-line process-icon"></i>
-                        <h4>쉬운 조리 시스템</h4>
-                        <p>조리 경험이 없어도 괜찮습니다. 표준화된 레시피와 조리 매뉴얼, 충분한 실습 교육으로 누구든 일정 수준 이상의 맛을 낼 수 있습니다.</p>
+                        <span class="process-tag">Easy System</span>
+                        <h4>대중적인 성공</h4>
+                        <div class="quote-mark">“</div>
+                        <p>
+                            사계절 유행을 타지 않는 메뉴 구성과<br>
+                            돈빠만의 골라먹는 편리한 시스템
+                        </p>
+                        <div class="quote-mark">”</div>
+                        <div class="divider"></div>
+                        <span class="sub-desc">다양한 메뉴 구성으로 타 브랜드와<br>확실한 차별성을 확보합니다.</span>
                     </div>
+
                     <div class="process-item">
-                        <div class="process-num">04</div>
-                        <i class="ri-funds-line process-icon"></i>
-                        <h4>합리적인 창업 비용</h4>
-                        <p>과도한 인테리어 비용을 지양합니다. 실용적이면서도 브랜드 정체성을 담은 인테리어 패키지로 초기 투자 부담을 낮춥니다.</p>
-                    </div>
-                    <div class="process-item">
-                        <div class="process-num">05</div>
-                        <i class="ri-heart-line process-icon"></i>
-                        <h4>오픈 후 지속 지원</h4>
-                        <p>오픈이 끝이 아닙니다. 슈퍼바이저 정기 방문, 운영 데이터 분석, 메뉴 업데이트 지원 등 가맹점 운영 전반을 함께합니다.</p>
-                    </div>
-                    <div class="process-item">
-                        <div class="process-num">06</div>
-                        <i class="ri-map-pin-2-line process-icon"></i>
-                        <h4>입지 분석 무료 지원</h4>
-                        <p>상권 분석 전문가가 희망 지역의 유동 인구, 경쟁 현황, 예상 매출을 분석하여 최적의 입지를 추천합니다. 무료로 제공됩니다.</p>
+                        <span class="process-tag">Profit Max</span>
+                        <h4>안정적인 매출</h4>
+                        <div class="quote-mark">“</div>
+                        <p>
+                            홀 + 포장 + 배달 3way 전략으로<br>
+                            매출을 극대화하고 안정성을 높입니다.
+                        </p>
+                        <div class="quote-mark">”</div>
+                        <div class="divider"></div>
+                        <span class="sub-desc">높은 테이블 회전율과 체계적인<br>관리로 높은 재구매율을 실현</span>
                     </div>
                 </div>
             </div>
@@ -139,7 +177,7 @@
             <div class="container">
                 <div class="origin-header">
                     <span class="origin-subtitle">MENU GALLERY</span>
-                    <h2 class="origin-title">눈으로 먼저 즐기는<span class="highlight">맛의 감동</span></h2>
+                    <h2 class="origin-title mobile-break">눈으로 먼저 즐기는<span class="highlight">맛의 감동</span></h2>
                 </div>
             </div>
             <div class="menu-slider-wrap">
@@ -171,31 +209,52 @@
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-social">
-                <a href="#"><i class="ri-phone-fill"></i></a>
-                <a href="#"><i class="ri-mail-fill"></i></a>
-                <a href="#"><i class="ri-instagram-line"></i></a>
-                <a href="#"><i class="ri-facebook-box-fill"></i></a>
-                <a href="#"><i class="ri-global-line"></i></a>
-                <a href="#"><i class="ri-moon-clear-fill"></i></a>
+        <div class="footer-container">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="Image/돈빠_로고_푸터.png" alt="돈빠 로고">
+                </div>
+                <div class="footer-copyright">
+                    Copyright © WITHPLAN. All rights reserved.
+                </div>
+                <div class="footer-brand-links">
+                    <a href="#">회사소개</a>
+                    <a href="#">이용약관</a>
+                    <a href="#" class="bold">개인정보처리방침</a>
+                    <a href="#">이용안내</a>
+                </div>
             </div>
-            <div class="footer-nav">
-                <a href="#">ABOUT</a>
-                <a href="#">이용약관</a>
-                <a href="#">개인정보처리방침</a>
-                <a href="#">사업자정보확인</a>
+
+            <!-- Customer Center Column -->
+            <div class="footer-customer">
+                <h4 class="footer-col-title">CUSTOMER CENTER</h4>
+                <ul class="footer-info-list">
+                    <li><strong>1522-7449</strong></li>
+                    <li>09:00 - 18:00 (평일 상담)</li>
+                    <li>13:00 - 14:20 (점심 시간)</li>
+                    <li>10:00 - 14:00 (토요일 상담)</li>
+                    <li>일요일 · 공휴일 휴무</li>
+                </ul>
+                <a href="franchise.html" class="footer-btn">성공 창업 문의</a>
             </div>
-            <div class="footer-info-text">
-                <p>상호: (주)돈까스에 빠지다 <span>|</span> 대표: 이영일 <span>|</span> 개인정보관리책임자: 김지민 <span>|</span> 전화: 1522-7499
-                    <span>|</span> 이메일: webmaster@donpa.com
-                </p>
-                <p>주소: 경기도 평택시 서탄면 서탄2로 129 <span>|</span> 사업자등록번호: 135-86-33849 <span>|</span> 통신판매: 2020-용인기흥-0006
-                    <span>|</span> 호스팅제공자: (주)식스샵
-                </p>
+
+            <!-- Company Info Column -->
+            <div class="footer-company">
+                <h4 class="footer-col-title">COMPANY INFO</h4>
+                <ul class="footer-info-list">
+                    <li>상호 : 주식회사 위드플랜 | 대표 : 이병운</li>
+                    <li>주소 : 경상북도 경산시 청운로29 2층</li>
+                    <li>사업자등록번호 : 329-40-01449</li>
+                </ul>
             </div>
-            <div class="copyright">
-                Copyright (c) 2023 (주)돈까스에 빠지다 All Rights reserved.
+
+            <!-- Follow Us Column -->
+            <div class="footer-follow">
+                <h4 class="footer-col-title">FOLLOW US</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.instagram.com/don_bba/" target="_blank">INSTAGRAM</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -213,6 +272,46 @@
         }
 
         setInterval(nextSlide, 5000); // 5초마다 전환
+
+        // Scroll-driven Hero Text Animation
+        const hero = document.querySelector('.scroll-hero');
+        const sticky = document.querySelector('.hero-sticky-container');
+        const phases = document.querySelectorAll('.hero-text-phase');
+        const indicatorBar = document.querySelector('.indicator-bar');
+
+        function handleHeroScroll() {
+            if (!hero || !sticky) return;
+
+            const rect = hero.getBoundingClientRect();
+            const viewHeight = window.innerHeight;
+            const heroHeight = hero.offsetHeight;
+
+            // Calculate progress (0 to 1) based on how much of the long hero section has been scrolled
+            let progress = -rect.top / (heroHeight - viewHeight);
+            progress = Math.max(0, Math.min(1, progress));
+
+            // Update Indicator Bar
+            if (indicatorBar) {
+                indicatorBar.style.height = `${progress * 100}%`;
+            }
+
+            // Determine active phase (Dividing into 2 phases: 0-0.5, 0.5-1.0)
+            let activePhase = 1;
+            if (progress > 0.5) activePhase = 2;
+
+            phases.forEach(phase => {
+                const phaseNum = parseInt(phase.getAttribute('data-phase'));
+                if (phaseNum === activePhase) {
+                    phase.classList.add('active');
+                } else {
+                    phase.classList.remove('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleHeroScroll);
+        window.addEventListener('resize', handleHeroScroll);
+        handleHeroScroll(); // Initial call
 
     </script>
 </body>

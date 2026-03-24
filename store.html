@@ -12,14 +12,19 @@
 
 <body>
     <div class="top-bar">
-        <div class="info">성공 창업 문의 1522-7499</div>
+        <div class="info">성공 창업 문의 1522-7449</div>
         <div class="sns">
-            <a href="#">INSTAGRAM</a>
-            <a href="#">YOUTUBE</a>
+            <a href="https://www.instagram.com/don_bba/" target="_blank" rel="noopener noreferrer">
+                <i class="ri-instagram-line"></i> <span>인스타그램</span>
+            </a>
         </div>
     </div>
     <header id="main-header">
-        <div class="logo">돈까스에 빠지다</div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Image/돈빠_로고_화이트.png" alt="돈빠 로고">
+            </a>
+        </div>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -45,10 +50,9 @@
                 src="https://img.icons8.com/ios-filled/50/000000/news.png" alt="icon"></a>
     </div>
 
-    <section class="sub-hero"
-        style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2074&auto=format&fit=crop');">
+    <section class="sub-hero" style="background-image: url('Image/매장찾기_대문.jpg');">
         <div class="sub-hero-overlay"></div>
-        <div class="menu-hero-container" style="position: relative; z-index: 2; width: 100%; text-align: left;">
+        <div class="menu-hero-container">
             <div class="menu-hero-content-left reveal">
                 <div class="menu-hero-breadcrumb">
                     <a href="index.html">HOME</a> <span>&gt;</span> <a href="store.html">매장안내</a>
@@ -88,81 +92,91 @@
                 </div>
 
                 <div class="store-list-container">
-                    <div class="store-items">
-                        <div class="store-card reveal selected"
-                            data-map-url="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%EC%9B%90%EB%8C%80%EB%A1%9C%20107&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                            style="cursor: pointer;">
-                            <h4>돈빠 침산점</h4>
-                            <p><i class="ri-map-pin-2-line"></i> 대구 북구 원대로 107 1층</p>
-                            <p><i class="ri-phone-line"></i> 053-353-0092</p>
-                            <div style="margin-top: 10px;">
-                                <span class="store-tag">주차가능</span>
-                                <span class="store-tag">단체석</span>
-                                <span class="store-tag">WiFi</span>
+                    <!-- 매장 가로 리스트 -->
+                    <div class="store-items-wrap reveal">
+                        <div class="store-items">
+                            <div class="store-card selected" data-area="대구"
+                                data-map-url="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%EC%9B%90%EB%8C%80%EB%A1%9C%20107&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                data-photo-url="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop">
+                                <h4>침산점</h4>
+                                <p><i class="ri-map-pin-2-line"></i> 대구 북구 원대로 107 1층</p>
+                                <p><i class="ri-phone-line"></i> 053-353-0092</p>
+                                <div class="store-tags-wrap">
+                                    <span class="store-tag">주차가능</span>
+                                    <span class="store-tag">단체석</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="store-card reveal"
-                            data-map-url="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%EB%8C%80%ED%95%99%EB%A1%9C23%EA%B8%B8%2021&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                            style="cursor: pointer;">
-                            <h4>돈빠 경대북문점</h4>
-                            <p><i class="ri-map-pin-2-line"></i> 대구 북구 대학로23길 21</p>
-                            <p><i class="ri-phone-line"></i> 053-954-0092</p>
-                            <div style="margin-top: 10px;">
-                                <span class="store-tag">포장가능</span>
-                                <span class="store-tag">반려동물 동반</span>
+                            <div class="store-card" data-area="대구"
+                                data-map-url="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%EB%8C%80%ED%95%99%EB%A1%9C23%EA%B8%B8%2021&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                data-photo-url="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop">
+                                <h4>경대북문점</h4>
+                                <p><i class="ri-map-pin-2-line"></i> 대구 북구 대학로23길 21</p>
+                                <p><i class="ri-phone-line"></i> 053-954-0092</p>
+                                <div class="store-tags-wrap">
+                                    <span class="store-tag">포장가능</span>
+                                    <span class="store-tag">반려동물</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="store-card reveal"
-                            data-map-url="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EC%A4%91%EA%B5%AC%20%EB%8B%AC%EA%B5%AC%EB%B2%8C%EB%8C%80%EB%A1%9C%202081-14&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                            style="cursor: pointer;">
-                            <h4>돈빠 반월당점</h4>
-                            <p><i class="ri-map-pin-2-line"></i> 대구 중구 달구벌대로 2081-14</p>
-                            <p><i class="ri-phone-line"></i> 053-252-0092</p>
-                            <div style="margin-top: 10px;">
-                                <span class="store-tag">주차가능</span>
-                                <span class="store-tag">배달가능</span>
+                            <div class="store-card" data-area="대구"
+                                data-map-url="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EC%A4%91%EA%B5%AC%20%EB%8B%AC%EA%B5%AC%EB%B2%8C%EB%8C%80%EB%A1%9C%202081-14&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                data-photo-url="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=2071&auto=format&fit=crop">
+                                <h4>반월당점</h4>
+                                <p><i class="ri-map-pin-2-line"></i> 대구 중구 달구벌대로 2081-14</p>
+                                <p><i class="ri-phone-line"></i> 053-252-0092</p>
+                                <div class="store-tags-wrap">
+                                    <span class="store-tag">주차가능</span>
+                                    <span class="store-tag">배달가능</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="store-card reveal"
-                            data-map-url="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EA%B5%AD%EC%B1%84%EB%B3%B4%EC%83%81%EB%A1%9C131%EA%B8%B8%2022%201%EC%B8%B5&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                            style="cursor: pointer;">
-                            <h4>돈빠 시청점</h4>
-                            <p><i class="ri-map-pin-2-line"></i> 대구광역시 중구 국채보상로131길 22 1층</p>
-                            <p><i class="ri-phone-line"></i> 053-123-4567</p>
-                            <div style="margin-top: 10px;">
-                                <span class="store-tag">포장가능</span>
-                                <span class="store-tag">배달가능</span>
+                            <div class="store-card" data-area="대구"
+                                data-map-url="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EA%B5%AD%EC%B1%84%EB%B3%B4%EC%83%81%EB%A1%9C131%EA%B8%B8%2022%201%EC%B8%B5&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                data-photo-url="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop">
+                                <h4>시청점</h4>
+                                <p><i class="ri-map-pin-2-line"></i> 대구 중구 국채보상로131길 22 1층</p>
+                                <p><i class="ri-phone-line"></i> 053-123-4567</p>
+                                <div class="store-tags-wrap">
+                                    <span class="store-tag">포장가능</span>
+                                    <span class="store-tag">배달가능</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="store-card reveal"
-                            data-map-url="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%8B%AC%EC%84%B1%EA%B5%B0%20%EB%8B%A4%EC%82%AC%EC%9D%8D%20%EC%84%9C%EC%9E%AC%EB%B3%B8%EA%B8%B8%2086&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                            style="cursor: pointer;">
-                            <h4>돈빠 서재점</h4>
-                            <p><i class="ri-map-pin-2-line"></i> 대구광역시 달성군 다사읍 서재본길 86</p>
-                            <p><i class="ri-phone-line"></i> 053-234-5678</p>
-                            <div style="margin-top: 10px;">
-                                <span class="store-tag">주차가능</span>
-                                <span class="store-tag">단체석</span>
+                            <div class="store-card" data-area="대구"
+                                data-map-url="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%8B%AC%EC%84%B1%EA%B5%B0%20%EB%8B%A4%EC%82%AC%EC%9D%8D%20%EC%84%9C%EC%9E%AC%EB%B3%B8%EA%B8%B8%2086&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                data-photo-url="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop">
+                                <h4>서재점</h4>
+                                <p><i class="ri-map-pin-2-line"></i> 대구 달성군 다사읍 서재본길 86</p>
+                                <p><i class="ri-phone-line"></i> 053-234-5678</p>
+                                <div class="store-tags-wrap">
+                                    <span class="store-tag">주차가능</span>
+                                    <span class="store-tag">단체석</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="store-card reveal"
-                            data-map-url="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%B6%81%EA%B5%AC%20%EC%9C%A0%ED%86%B5%EB%8B%A8%EC%A7%80%EB%A1%9C8%EA%B8%B8%2072%201%EC%B8%B5%20101%ED%98%B8&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                            style="cursor: pointer;">
-                            <h4>돈빠 유통단지점</h4>
-                            <p><i class="ri-map-pin-2-line"></i> 대구광역시 북구 유통단지로8길 72 1층 101호</p>
-                            <p><i class="ri-phone-line"></i> 053-345-6789</p>
-                            <div style="margin-top: 10px;">
-                                <span class="store-tag">주차가능</span>
-                                <span class="store-tag">포장가능</span>
+                            <div class="store-card" data-area="대구"
+                                data-map-url="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%B6%81%EA%B5%AC%20%EC%9C%A0%ED%86%B5%EB%8B%A8%EC%A7%80%EB%A1%9C8%EA%B8%B8%2072%201%EC%B8%B5%20101%ED%98%B8&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                data-photo-url="https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1974&auto=format&fit=crop">
+                                <h4>유통단지점</h4>
+                                <p><i class="ri-map-pin-2-line"></i> 대구 북구 유통단지로8길 72 1층</p>
+                                <p><i class="ri-phone-line"></i> 053-456-7890</p>
+                                <div class="store-tags-wrap">
+                                    <span class="store-tag">가족외식</span>
+                                    <span class="store-tag">주차완비</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="map-container reveal"
-                        style="border-radius:20px; overflow:hidden; box-shadow:var(--shadow); height:100%; min-height:400px;">
-                        <iframe id="store-map"
-                            src="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%EC%9B%90%EB%8C%80%EB%A1%9C%20107&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                            width="100%" height="100%" style="border:0; min-height:400px;" allowfullscreen=""
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    <!-- 상세 정보 (사진 + 지도 2분할) -->
+                    <div class="store-detail-wrap reveal">
+                        <div class="store-photo-container">
+                            <img id="store-photo"
+                                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop"
+                                alt="Store Photo">
+                        </div>
+                        <div class="map-container">
+                            <iframe id="store-map"
+                                src="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%EC%9B%90%EB%8C%80%EB%A1%9C%20107&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -170,77 +184,93 @@
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-social">
-                <a href="#"><i class="ri-phone-fill"></i></a>
-                <a href="#"><i class="ri-mail-fill"></i></a>
-                <a href="#"><i class="ri-instagram-line"></i></a>
-                <a href="#"><i class="ri-facebook-box-fill"></i></a>
-                <a href="#"><i class="ri-global-line"></i></a>
-                <a href="#"><i class="ri-moon-clear-fill"></i></a>
+        <div class="footer-container">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="Image/돈빠_로고_푸터.png" alt="돈빠 로고">
+                </div>
+                <div class="footer-copyright">
+                    Copyright © WITHPLAN. All rights reserved.
+                </div>
+                <div class="footer-brand-links">
+                    <a href="#">회사소개</a>
+                    <a href="#">이용약관</a>
+                    <a href="#" class="bold">개인정보처리방침</a>
+                    <a href="#">이용안내</a>
+                </div>
             </div>
-            <div class="footer-nav">
-                <a href="#">ABOUT</a>
-                <a href="#">이용약관</a>
-                <a href="#">개인정보처리방침</a>
-                <a href="#">사업자정보확인</a>
+
+            <!-- Customer Center Column -->
+            <div class="footer-customer">
+                <h4 class="footer-col-title">CUSTOMER CENTER</h4>
+                <ul class="footer-info-list">
+                    <li><strong>1522-7449</strong></li>
+                    <li>09:00 - 18:00 (평일 상담)</li>
+                    <li>13:00 - 14:20 (점심 시간)</li>
+                    <li>10:00 - 14:00 (토요일 상담)</li>
+                    <li>일요일 · 공휴일 휴무</li>
+                </ul>
+                <a href="franchise.html" class="footer-btn">성공 창업 문의</a>
             </div>
-            <div class="footer-info-text">
-                <p>상호: (주)돈까스에 빠지다 <span>|</span> 대표: 이영일 <span>|</span> 개인정보관리책임자: 김지민 <span>|</span> 전화: 1522-7499
-                    <span>|</span> 이메일: webmaster@donpa.com
-                </p>
-                <p>주소: 경기도 평택시 서탄면 서탄2로 129 <span>|</span> 사업자등록번호: 135-86-33849 <span>|</span> 통신판매: 2020-용인기흥-0006
-                    <span>|</span> 호스팅제공자: (주)식스샵
-                </p>
+
+            <!-- Company Info Column -->
+            <div class="footer-company">
+                <h4 class="footer-col-title">COMPANY INFO</h4>
+                <ul class="footer-info-list">
+                    <li>상호 : 주식회사 위드플랜 | 대표 : 이병운</li>
+                    <li>주소 : 경상북도 경산시 청운로29 2층</li>
+                    <li>사업자등록번호 : 329-40-01449</li>
+                </ul>
             </div>
-            <div class="copyright">
-                Copyright (c) 2023 (주)돈까스에 빠지다 All Rights reserved.
+
+            <!-- Follow Us Column -->
+            <div class="footer-follow">
+                <h4 class="footer-col-title">FOLLOW US</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.instagram.com/don_bba/" target="_blank">INSTAGRAM</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script src="js/common.js"></script>
     <script>
-        // 메뉴 클릭 시 닫기
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Store Map Interaction Logic
+        const storeItems = document.querySelector('.store-items');
         const storeCards = document.querySelectorAll('.store-card');
         const mapIframe = document.getElementById('store-map');
+        const storePhoto = document.getElementById('store-photo');
+
+        function selectStore(card) {
+            storeCards.forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+            const mapUrl = card.getAttribute('data-map-url');
+            if (mapUrl) mapIframe.src = mapUrl;
+
+            const photoUrl = card.getAttribute('data-photo-url');
+            if (photoUrl) {
+                storePhoto.style.opacity = '0';
+                setTimeout(() => {
+                    storePhoto.src = photoUrl;
+                    storePhoto.style.opacity = '1';
+                }, 300);
+            }
+        }
 
         storeCards.forEach(card => {
-            card.addEventListener('click', () => {
-                // Remove selected class from all
-                storeCards.forEach(c => c.classList.remove('selected'));
-
-                // Add selected class to clicked
-                card.classList.add('selected');
-
-                // Update map URL
-                const mapUrl = card.getAttribute('data-map-url');
-                if (mapUrl) {
-                    mapIframe.src = mapUrl;
-                }
-            });
+            card.addEventListener('click', () => selectStore(card));
         });
 
-        // Store Search Interaction Logic
         const searchInput = document.getElementById('store-search-input');
-
         function performSearch() {
             const query = searchInput.value.toLowerCase().trim();
             let firstVisibleCard = null;
 
             storeCards.forEach(card => {
                 const title = card.querySelector('h4').textContent.toLowerCase();
-                // Select the first p tag (address)
                 const address = card.querySelector('p').textContent.toLowerCase();
-
                 if (title.includes(query) || address.includes(query)) {
                     card.style.display = 'block';
                     if (!firstVisibleCard) firstVisibleCard = card;
@@ -249,20 +279,11 @@
                 }
             });
 
-            // If the currently selected card is hidden by search, select the first visible one
-            const selectedIsHidden = Array.from(storeCards).some(c => c.classList.contains('selected') && c.style.display === 'none');
-
-            if (firstVisibleCard && selectedIsHidden) {
-                storeCards.forEach(c => c.classList.remove('selected'));
-                firstVisibleCard.classList.add('selected');
-                const mapUrl = firstVisibleCard.getAttribute('data-map-url');
-                if (mapUrl) {
-                    mapIframe.src = mapUrl;
-                }
+            if (firstVisibleCard) {
+                const isSelectedHidden = Array.from(storeCards).some(c => c.classList.contains('selected') && c.style.display === 'none');
+                if (isSelectedHidden) selectStore(firstVisibleCard);
             }
         }
-
-        // 입력할 때마다 실시간으로 검색되도록 'input' 이벤트 적용
         searchInput.addEventListener('input', performSearch);
     </script>
 </body>
