@@ -1,3 +1,7 @@
+.mobile-br {
+    display: none;
+}
+
 .brand-section {
     padding: 100px 5%;
     display: grid;
@@ -216,100 +220,123 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 80px 0;
+    /* 세로 중앙 정렬 */
+    padding: 60px 0;
     border-bottom: 1px solid rgba(48, 34, 31, 0.08);
-    gap: 100px;
-}
-
-.history-item.reverse {
-    flex-direction: row-reverse;
+    gap: 60px;
 }
 
 .history-item:last-child {
     border-bottom: none;
 }
 
-.history-text {
+/* 왼쪽 그룹: 번호 + 제목 */
+.history-left {
     flex: 1;
-    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
-.history-item.reverse .history-text {
-    text-align: right;
+.history-num {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #F26649;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    line-height: 1;
+    flex-shrink: 0;
+    transform: skewX(-8deg);
+    /* 기울기 살짝 감소 (기존 italic 대비) */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* 시각적 두께 보강을 위한 미세한 쉐도우 */
+    text-shadow: 0.5px 0 0 #F26649, -0.5px 0 0 #F26649;
+    background: none;
+    box-shadow: none;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+}
+
+.history-title-box {
+    text-align: left;
 }
 
 .history-date {
     display: block;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: #F26649;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
+    margin-bottom: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
-.history-text h4 {
-    font-size: 2.2rem;
+.history-title-box h4 {
+    font-size: 1.8rem;
     font-weight: 800;
     color: #30221F;
-    margin-bottom: 20px;
     line-height: 1.3;
 }
 
-.history-text p {
+/* 오른쪽 그룹: 설명 문구 */
+.history-right {
+    flex: 1.4;
+    /* 설명을 더 넓게 배치 */
+}
+
+.history-right p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #666;
-    max-width: 550px;
-}
-
-.history-item.reverse .history-text p {
-    margin-left: auto;
-}
-
-.history-num {
-    width: 80px;
-    height: 80px;
-    background-color: #F26649;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.8rem;
-    font-weight: 900;
-    flex-shrink: 0;
-    box-shadow: 0 10px 20px rgba(242, 102, 73, 0.2);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: #333;
+    /* 더 진하게 */
+    font-weight: 600;
+    /* 텍스트 굵게 변경 */
+    word-break: keep-all;
+    margin: 0;
 }
 
 .history-item:hover .history-num {
-    transform: scale(1.15) rotate(5deg);
+    transform: scale(1.1) skewX(-5deg);
+    /* 호버 시 더 역동적으로 */
 }
 
-@media screen and (max-width: 960px) {
-
-    .history-item,
-    .history-item.reverse {
-        flex-direction: column-reverse;
-        text-align: center !important;
+@media screen and (max-width: 1024px) {
+    .history-item {
         gap: 40px;
-        padding: 60px 0;
     }
 
-    .history-text {
-        text-align: center !important;
+    .history-num {
+        font-size: 4rem;
     }
 
-    .history-text p {
-        margin: 0 auto !important;
+    .history-title-box h4 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 40px 0;
     }
 
-    .history-title {
-        font-size: 2.5rem;
+    .history-left {
+        width: 100%;
+        gap: 15px;
     }
 
-    .history-text h4 {
-        font-size: 1.8rem;
+    .history-num {
+        font-size: 3.5rem;
+    }
+
+    .history-right {
+        width: 100%;
+    }
+
+    .history-right p {
+        font-size: 1.05rem;
     }
 }
 
@@ -565,6 +592,8 @@
     }
 }
 
+
+
 .philosophy-section {
     padding: 120px 5%;
     background: #1A1008;
@@ -697,11 +726,12 @@
 
 @media screen and (max-width: 480px) {
     .brand-title {
-        font-size: 2.2rem !important;
+        font-size: 2.5rem !important;
+        line-height: 1.2;
     }
 
     .brand-title em {
-        font-size: 2.8rem !important;
+        font-size: 3.2rem !important;
     }
 
     .history-title {
@@ -738,5 +768,583 @@
     .brand-body p {
         font-size: 1.15rem !important;
         line-height: 1.8 !important;
+    }
+}
+
+/* Cooking System Section */
+.cooking-system-section {
+    padding: 120px 0 0;
+    /* Bottom padding removed as efficiency-grid will fill it */
+    background-color: #F8F4F0;
+    /* Reverted to original ivory */
+    text-align: center;
+}
+
+.cooking-system-section .container {
+    padding: 0 5%;
+    max-width: 1600px;
+    /* Overridden to allow 1600px width */
+    margin: 0 auto;
+}
+
+.cooking-system-header {
+    margin-bottom: 60px;
+}
+
+.cooking-system-section .subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #F26649;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 auto 25px;
+    width: fit-content;
+}
+
+.cooking-system-section .subtitle::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: #F26649;
+}
+
+.cooking-system-title {
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: #30221F;
+    margin-bottom: 30px;
+}
+
+.cooking-system-title span {
+    color: #FAA63F;
+    position: relative;
+    display: inline-block;
+}
+
+.cooking-system-title span::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: rgba(250, 166, 63, 0.15);
+    z-index: -1;
+}
+
+.cooking-system-subtitle-box {
+    background: #fff;
+    display: inline-block;
+    padding: 30px 60px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.cooking-system-subtitle-box h3 {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #F26649;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.step-image-box {
+    max-width: 1600px;
+    /* Further increased size */
+    margin: 80px auto;
+}
+
+.step-images-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step-images-list picture:nth-child(1) img { animation-delay: 0s; }
+.step-images-list picture:nth-child(2) img { animation-delay: 1.2s; }
+.step-images-list picture:nth-child(3) img { animation-delay: 2.4s; }
+.step-images-list picture:nth-child(4) img { animation-delay: 3.6s; }
+
+.step-images-list img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    mix-blend-mode: multiply;
+    animation: scaleSteps 4.8s infinite ease-in-out;
+}
+
+@keyframes scaleSteps {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+    25% {
+        transform: scale(1.08);
+        filter: brightness(1.05);
+    }
+
+    50% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+.cooking-system-subtitle-box p {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #666;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.cooking-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    /* Remove gap to manage connectors better */
+    max-width: 1200px;
+    margin: 60px auto;
+    position: relative;
+}
+
+.step-card {
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+/* Connecting Line */
+.step-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    /* Align with the middle of the image box */
+    right: -20px;
+    width: 40px;
+    height: 2px;
+    background: rgba(242, 102, 73, 0.2);
+}
+
+.step-img-box {
+    width: 100%;
+    aspect-ratio: 1.4 / 1;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.step-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.step-card:hover .step-img-box img {
+    transform: scale(1.1);
+}
+
+.step-card h4 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #30221F;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 1rem;
+    color: #777;
+    font-weight: 500;
+    word-break: keep-all;
+}
+
+/* Comparison Bar */
+.comparison-container {
+    max-width: 1600px;
+    /* Re-aligned with even larger image box */
+    margin: 80px auto 100px;
+    position: relative;
+}
+
+.comparison-bar {
+    display: flex;
+    background: #FFE6DF;
+    border-radius: 60px;
+    overflow: hidden;
+    height: 75px;
+    /* Increased height */
+    box-shadow: 0 10px 30px rgba(242, 102, 73, 0.1);
+    position: relative;
+}
+
+.bar-item.muted {
+    color: #F26649;
+    opacity: 0.8;
+    animation: pulseText 3s infinite ease-in-out;
+}
+
+@keyframes pulseText {
+    0% {
+        color: rgba(242, 102, 73, 0.6);
+        transform: scale(1);
+    }
+
+    50% {
+        color: rgba(242, 102, 73, 1);
+        transform: scale(1.05);
+        /* Slight scale for extra emphasis */
+        text-shadow: 0 0 10px rgba(242, 102, 73, 0.2);
+    }
+
+    100% {
+        color: rgba(242, 102, 73, 0.6);
+        transform: scale(1);
+    }
+}
+
+.bar-label-top {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #999;
+    margin-bottom: 12px;
+    padding-left: 20px;
+}
+
+.comparison-info-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 50%;
+    /* Align under the first 3 items */
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #F26649;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    /* Slight gap from the bar */
+    z-index: 1;
+}
+
+.comparison-info-text i {
+    font-size: 1.4rem;
+}
+
+.bar-item {
+    font-family: 'Noto Sans KR', sans-serif;
+    flex: 1 1 0;
+    /* Force equal width */
+    width: 0;
+    /* Ensure flex-basis is respected */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    /* Larger font */
+    font-weight: 800;
+    color: #fff;
+    white-space: nowrap;
+    padding: 0 10px;
+    position: relative;
+}
+
+.bar-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 25%;
+    height: 50%;
+    width: 1.5px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.bar-item.muted:not(:last-child)::after {
+    background: rgba(242, 102, 73, 0.2);
+}
+
+.bar-item.highlight {
+    background: #F26649;
+    box-shadow: 0 0 20px rgba(242, 102, 73, 0.4);
+    z-index: 1;
+}
+
+.bar-item.muted {
+    color: #F26649;
+    opacity: 0.7;
+}
+
+.comparison-desc {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #30221F;
+}
+
+.comparison-desc span {
+    color: #F26649;
+}
+
+.mobile-comparison-msg {
+    display: none;
+}
+
+.comparison-line {
+    width: 300px;
+    height: 40px;
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    margin: -35px auto 10px;
+}
+
+/* Bottom Icons */
+.efficiency-grid {
+    background: #FAA63F;
+    /* Navigation dark color */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 40px 5%;
+    gap: 30px;
+    width: 100%;
+    max-width: none;
+    margin-top: 100px;
+}
+
+.efficiency-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+    background: #fff;
+    /* White box */
+    padding: 35px 40px;
+    border-radius: 20px;
+    color: #30221F;
+    text-align: left;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.efficiency-item:hover {
+    transform: translateY(-5px);
+}
+
+.efficiency-icon {
+    width: 70px;
+    height: 70px;
+    background: #FAA63F;
+    /* Brand color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.efficiency-text h5 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #30221F;
+}
+
+.efficiency-text p {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1024px) {
+    .cooking-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .step-card:not(:last-child)::after {
+        top: auto;
+        bottom: -35px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) rotate(90deg);
+        width: 30px;
+    }
+
+    .efficiency-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 60px 5%;
+    }
+
+    .efficiency-item {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cooking-system-title {
+        font-size: 2rem;
+    }
+
+    .cooking-system-subtitle-box {
+        padding: 25px 15px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .mobile-br {
+        display: block;
+    }
+
+    .cooking-system-subtitle-box h3 {
+        font-size: 1.3rem;
+    }
+
+    .cooking-system-subtitle-box p {
+        font-size: 0.85rem;
+    }
+
+    .step-image-box {
+        margin: 30px auto;
+        width: 100%;
+        padding: 0;
+    }
+
+    .step-images-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        width: 100%;
+    }
+
+    .step-images-list img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        mix-blend-mode: multiply;
+        transition: transform 0.4s ease;
+    }
+
+    .step-card h4 {
+        font-size: 1.4rem;
+    }
+
+    .comparison-bar {
+        flex-wrap: wrap;
+        height: auto;
+        border-radius: 15px;
+        background: transparent;
+        overflow: hidden;
+        gap: 2px;
+    }
+
+    .bar-item {
+        flex: 1 1 calc(33.33% - 2px);
+        height: 60px;
+        font-size: 0.78rem;
+        padding: 5px;
+        line-height: 1.3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .bar-item.muted {
+        background: rgba(242, 102, 73, 0.1);
+    }
+
+    .bar-item.highlight {
+        background: #F26649;
+    }
+
+    .bar-item:not(:last-child)::after {
+        display: none;
+    }
+
+    .mobile-comparison-msg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 15px 0;
+        background: #fff;
+        order: 2;
+        color: #F26649;
+        font-weight: 800;
+        font-size: 0.9rem;
+        text-align: center;
+        gap: 5px;
+        line-height: 1.4;
+    }
+
+    .mobile-comparison-msg i {
+        font-size: 1.2rem;
+    }
+
+    .bar-item:nth-child(1), .bar-item:nth-child(2), .bar-item:nth-child(3) { order: 1; }
+    .bar-item:nth-child(5), .bar-item:nth-child(6), .bar-item:nth-child(7) { order: 3; }
+
+    .comparison-info-text {
+        display: none;
+    }
+
+    .efficiency-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .efficiency-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .efficiency-text p {
+        font-size: 0.9rem;
+    }
+
+    .history-item {
+        align-items: center;
+        text-align: center;
+    }
+
+    .history-num {
+        display: none;
+    }
+
+    .history-left {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .history-title-box {
+        text-align: center;
+    }
+
+    .history-title-box h4 {
+        font-size: 1.4rem;
+        line-height: 1.4;
+    }
+
+    .history-right {
+        text-align: center;
+    }
+
+    .history-body {
+        text-align: center;
+        word-break: keep-all;
     }
 }

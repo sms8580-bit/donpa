@@ -5,8 +5,7 @@
 }
 
 .hero.scroll-hero {
-    height: 200vh;
-    /* Scroll length for 2 phases */
+    height: 100vh;
 }
 
 .hero-sticky-container {
@@ -40,6 +39,7 @@
     background-position: center;
     opacity: 0;
     transition: opacity 2s ease-in-out;
+    will-change: opacity;
 }
 
 .slide.active {
@@ -81,11 +81,10 @@
 }
 
 .hero h1 {
-    font-size: 8rem;
-    /* Large impact font */
-    line-height: 1.1;
+    font-size: clamp(5rem, 8vw + 1rem, 8rem);
+    /* Scales between 5rem and 8rem based on screen width */
+    line-height: 0.95;
     font-weight: 100;
-    /* Ultra thin for modern feel */
     margin: 0;
     display: block;
 }
@@ -96,37 +95,21 @@
 }
 
 /* Individual Letter Spacing for Alignment (Tuned for 8rem Extra Bold) */
-.hero-l1 {
-    letter-spacing: 0.04em;
-}
-
-/* 돈까스 - increase to match '충분해' width */
-.hero-l2 {
-    letter-spacing: 0;
-}
-
-/* 돈빠면 */
+.hero-l1,
+.hero-l2,
 .hero-l3 {
-    letter-spacing: 0.03em;
+    display: flex;
+    justify-content: flex-start;
 }
 
-/* 충분해 - naturally the widest */
-
-.hero-l4 {
-    letter-spacing: 0.01em;
+.hero-l1>span,
+.hero-l2>span,
+.hero-l3>span {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    flex-shrink: 0;
 }
-
-/* 정성을 다해 */
-.hero-l5 {
-    letter-spacing: 0.02em;
-}
-
-/* 직접 만드는 */
-.hero-l6 {
-    letter-spacing: 0;
-}
-
-/* 수제 돈까스 */
 
 .hero h1 .highlight {
     color: var(--primary-color);
@@ -136,24 +119,6 @@
     color: var(--primary-color);
 }
 
-/* Scroll Indicator */
-.scroll-indicator {
-    position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2px;
-    height: 150px;
-    background: rgba(255, 255, 255, 0.2);
-    z-index: 10;
-}
-
-.indicator-bar {
-    width: 100%;
-    height: 0%;
-    background: var(--primary-color);
-    transition: height 0.1s linear;
-}
 
 .btn {
     display: inline-block;
@@ -230,7 +195,7 @@
 
     width: max-content;
     padding: 20px 0;
-
+    will-change: transform;
 }
 
 .menu-slider-track:hover {
@@ -241,19 +206,25 @@
     width: 400px;
     height: 400px;
     flex-shrink: 0;
-    border-radius: 20px;
+    border-radius: 30px;
     overflow: hidden;
+    transition: transform 0.4s ease;
 }
 
 .menu-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    object-position: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-slide:hover {
+    transform: translateY(-10px);
 }
 
 .menu-slide:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 @keyframes menu-scroll-infinite {
@@ -285,6 +256,7 @@
 }
 
 @media screen and (max-width: 768px) {
+
     /* 히어로: 풀블리드 + cover로 세로까지 채움(100% auto 시 아래가 검게 비는 현상 방지) */
     .hero {
         padding: 0;
@@ -306,19 +278,32 @@
     }
 
     .hero-overlay {
-        background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.35) 0%,
-            rgba(0, 0, 0, 0.55) 45%,
-            rgba(0, 0, 0, 0.72) 100%
-        );
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.35) 0%,
+                rgba(0, 0, 0, 0.55) 45%,
+                rgba(0, 0, 0, 0.72) 100%);
     }
 
     .hero h1 {
         font-size: clamp(4.25rem, 11vw + 1.25rem, 5.75rem);
-        line-height: 1.06;
+        line-height: 0.5;
         font-weight: 400;
-        letter-spacing: -0.02em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-l1,
+    .hero-l2,
+    .hero-l3 {
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .hero-l1>span,
+    .hero-l2>span,
+    .hero-l3>span {
+        width: 55px;
     }
 
     .hero p {
@@ -437,9 +422,14 @@
 }
 
 @media screen and (max-width: 480px) {
+    .hero, .hero.scroll-hero, .hero-sticky-container {
+        height: 80vh !important;
+    }
+
     .hero-sticky-container {
         padding-left: 0;
         padding-right: 0;
+        overflow: hidden;
     }
 
     .hero-content {
@@ -447,10 +437,6 @@
         padding-right: 18px;
     }
 
-    .scroll-indicator {
-        right: 20px;
-        height: 100px;
-    }
 
     .section-features {
         padding: 80px 0;

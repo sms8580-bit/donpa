@@ -406,6 +406,36 @@
     text-align: center;
 }
 
+.cost-table th:nth-child(1),
+.cost-table td:nth-child(1) {
+    width: 25%;
+}
+
+.cost-table th:nth-child(2),
+.cost-table td:nth-child(2) {
+    width: 25%;
+}
+
+.cost-table th:nth-child(1),
+.cost-table td:nth-child(1) {
+    width: 30%;
+}
+
+.cost-table th:nth-child(2),
+.cost-table td:nth-child(2) {
+    width: 30%;
+}
+
+.cost-table th:nth-child(3),
+.cost-table td:nth-child(3) {
+    width: 40%;
+}
+
+.total-row td:nth-child(3) {
+    text-align: center;
+}
+
+
 .cost-table .strike {
     text-decoration: line-through;
     color: #999;
@@ -435,11 +465,17 @@
 }
 
 .cost-note {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: #888;
     text-align: left;
     margin-top: 15px;
     line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .cost-note {
+        font-size: 0.78rem;
+    }
 }
 
 .faq-section {
@@ -560,8 +596,8 @@
 
     .cost-table th,
     .cost-table td {
-        padding: 12px 5px;
-        font-size: 0.8rem;
+        padding: 15px 40px;
+        font-size: 0.9rem;
         white-space: nowrap;
     }
 
@@ -744,33 +780,22 @@
 }
 
 .process-card-num {
-    position: absolute;
-    top: 15px;
-    /* Slightly lower for better circular fit */
-    left: 45px;
-    /* Slightly further in for better balance */
-    width: 36px;
-    height: 36px;
-    background: #F26649;
-    /* Sub 1 Color */
-    color: #ffffff;
-    font-size: 0.9rem;
-    /* Smaller font for smaller bubble */
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+    display: none;
 }
 
 .process-card-icon {
-    font-size: 3.2rem;
-    color: #30221F;
-    /* Unified dark icon color */
-    margin-bottom: 12px;
+    width: 80px;
+    height: 80px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: #F26649;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(48, 34, 31, 0.08);
+    flex-shrink: 0;
 }
 
 .process-card h4 {
@@ -932,9 +957,13 @@
 }
 
 .process-card.grand-open h4,
-.process-card.grand-open .process-card-icon,
 .process-card.grand-open .process-desc-sub {
     color: #ffffff;
+}
+
+.process-card.grand-open .process-card-icon {
+    color: #F26649;
+    background: #ffffff;
 }
 
 @media (max-width: 1300px) {
