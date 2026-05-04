@@ -681,7 +681,7 @@
 
     /* brand-title(돈까스 돈빠면…)과 동일 비율: 본문 2.2rem · 강조(em) 2.8rem */
     .history-title em {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         line-height: 1.15;
     }
 
@@ -759,7 +759,7 @@
     }
 
     .history-title em {
-        font-size: 2.8rem !important;
+        font-size: 2.2rem !important;
         line-height: 1.15;
     }
 
