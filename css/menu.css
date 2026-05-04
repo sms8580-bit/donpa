@@ -474,7 +474,7 @@
 
     .menu-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 15px 10px !important;
+        gap: 40px 10px !important;
         margin-left: -10px !important;
         /* 컨테이너 여백 상쇄하여 이미지 키움 */
         margin-right: -10px !important;
@@ -489,13 +489,18 @@
         overflow: visible !important;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
     }
 
     .menu-img {
         aspect-ratio: 1 / 1;
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transform: none !important;
+    }
+
+    .menu-item:hover .menu-img {
+        transform: none !important;
     }
 
     .menu-info {
@@ -514,11 +519,12 @@
 
     .menu-info h3 {
         color: #333 !important;
-        margin-bottom: 6px !important;
+        margin-bottom: 0 !important;
         font-size: 1.4rem !important;
         /* 확실하게 확대 */
         font-weight: 100 !important;
-        line-height: 1.2;
+        line-height: 1;
+        transform: none !important;
     }
 
     .menu-desc {
@@ -528,12 +534,12 @@
 
     .price {
         display: block !important;
-        font-size: 1.25rem !important;
+        font-size: 1.18rem !important;
         /* 가격을 조금 더 크게 */
         color: #F26649 !important;
         /* 브랜드 주황색 */
         font-weight: 800 !important;
-        margin-top: 5px !important;
+        margin-top: 0 !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
@@ -636,7 +642,7 @@
 @media screen and (max-width: 480px) {
     .menu-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 15px 10px !important;
+        gap: 30px 10px !important;
         padding: 0 10px;
     }
 
@@ -647,7 +653,7 @@
     }
 
     .menu-info .price {
-        font-size: 1.05rem !important;
+        font-size: 0.98rem !important;
         font-weight: 800 !important;
     }
 

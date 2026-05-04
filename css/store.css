@@ -170,6 +170,16 @@
 }
 
 @media screen and (max-width: 768px) {
+    .store-search {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .store-search input {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
     .store-list-container {
         display: flex;
         flex-direction: column;

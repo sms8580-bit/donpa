@@ -2,6 +2,10 @@
     display: none;
 }
 
+.pc-br {
+    display: block;
+}
+
 .brand-section {
     padding: 100px 0;
     display: grid;
@@ -660,19 +664,24 @@
 
 @media screen and (max-width: 768px) {
     .brand-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
         line-height: 1.3;
     }
 
+    .brand-title em {
+        font-size: 2.5rem;
+        line-height: 1.15;
+    }
+
     .history-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
         line-height: 1.3;
         margin-bottom: 30px;
     }
 
     /* brand-title(돈까스 돈빠면…)과 동일 비율: 본문 2.2rem · 강조(em) 2.8rem */
     .history-title em {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         line-height: 1.15;
     }
 
@@ -735,16 +744,16 @@
 
 @media screen and (max-width: 480px) {
     .brand-title {
-        font-size: 2.5rem !important;
+        font-size: 2rem !important;
         line-height: 1.2;
     }
 
     .brand-title em {
-        font-size: 3.2rem !important;
+        font-size: 2.5rem !important;
     }
 
     .history-title {
-        font-size: 2.2rem !important;
+        font-size: 2rem !important;
         line-height: 1.3;
         margin-bottom: 0px;
     }
@@ -755,13 +764,13 @@
     }
 
     .history-footer h3 {
-        font-size: 2.2rem !important;
+        font-size: 2rem !important;
         margin-bottom: 15px;
         line-height: 1.2;
     }
 
     .history-footer p {
-        font-size: 1.15rem !important;
+        font-size: 1.05rem !important;
         line-height: 1.7 !important;
     }
 
@@ -1356,6 +1365,10 @@
 
     .mobile-br {
         display: block;
+    }
+
+    .pc-br {
+        display: none;
     }
 
     .cooking-system-subtitle-box h3 {

@@ -1,3 +1,11 @@
+.mobile-br {
+    display: none;
+}
+
+.pc-br {
+    display: block;
+}
+
 .franchise-contact {
     background-color: #30221F;
     color: #ffffff;
@@ -845,6 +853,14 @@
 
 /* Mobile Adjustment */
 @media screen and (max-width: 768px) {
+    .mobile-br {
+        display: block;
+    }
+
+    .pc-br {
+        display: none;
+    }
+
     .process-layers-container {
         display: block !important;
         aspect-ratio: auto !important;

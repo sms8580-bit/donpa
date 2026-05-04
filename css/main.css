@@ -313,12 +313,7 @@
     }
 
     .hero-content {
-        display: block !important;
-        max-width: 100%;
-        text-align: center;
-        padding-left: 15px;
-        padding-right: 15px;
-        box-sizing: border-box;
+        display: none !important;
     }
 
     .hero-text-phase {
