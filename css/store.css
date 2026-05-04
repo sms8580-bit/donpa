@@ -1,11 +1,11 @@
 .store-search {
-    background: var(--white);
-    padding: 30px 40px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    margin-bottom: 40px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    border: 1px solid #eee;
 }
 
 .store-search input {
@@ -24,31 +24,37 @@
     background: #fff;
 }
 
-
-
 .store-list-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 40px;
+    align-items: start;
+    height: 500px;
+    /* 높이를 줄여 더 컴팩트하게 구성 */
+    margin-bottom: 50px;
 }
 
 .store-items-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
     position: relative;
-    margin: 20px 0 40px;
 }
 
 .store-items {
     display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 15px 5px 30px;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    gap: 15px;
+    padding: 10px;
+    /* 테두리와 그림자가 잘리지 않도록 여백 확보 */
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
 }
 
 .store-items::-webkit-scrollbar {
-    height: 18px;
+    width: 8px;
 }
 
 .store-items::-webkit-scrollbar-track {
@@ -59,72 +65,31 @@
 .store-items::-webkit-scrollbar-thumb {
     background: #e0d5c1;
     border-radius: 12px;
-    border: 4px solid transparent;
-    background-clip: padding-box;
 }
 
 .store-items::-webkit-scrollbar-thumb:hover {
     background-color: var(--primary-color);
 }
 
-/* 네이티브 스크롤 화살표 버튼 */
-.store-items::-webkit-scrollbar-button:single-button:horizontal:decrement {
-    height: 24px;
-    width: 48px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2330221F' d='M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z'/%3E%3C/svg%3E");
-    cursor: pointer;
-}
-
-.store-items::-webkit-scrollbar-button:single-button:horizontal:increment {
-    height: 24px;
-    width: 48px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2330221F' d='M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z'/%3E%3C/svg%3E");
-    cursor: pointer;
-}
-
-.store-items::-webkit-scrollbar-button:hover {
-    background-color: rgba(0, 0, 0, 0.08);
-    border-radius: 6px;
-}
-
 .store-card {
-    min-width: 320px;
-    background: var(--white);
+    width: 100%;
+    background: #fff;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 2px solid #f0f0f0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    flex-shrink: 0;
     display: flex;
     flex-direction: column;
-}
-
-.store-card-img {
-    width: 100%;
-    height: 180px;
-    border-radius: 12px;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 15px;
-    transition: transform 0.5s ease;
-}
-
-.store-card:hover .store-card-img {
-    transform: scale(1.03);
 }
 
 .store-card:hover,
 .store-card.selected {
     border-color: var(--primary-color);
     background: #fff;
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(181, 153, 110, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(181, 153, 110, 0.15);
 }
 
 .store-card h4 {
@@ -148,38 +113,28 @@
     font-size: 1.1rem;
 }
 
-/* 매장 상세 정보 (지도 + 사진) */
+/* 매장 상세 정보 (사진 + 지도 좌우 배치) */
 .store-detail-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 100%;
 }
 
 .map-container,
 .store-photo-container {
-    border-radius: 24px;
+    border-radius: 30px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    height: 550px;
+    flex: 1;
+    height: 100%;
     position: relative;
 }
 
-.store-photo-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+.store-photo-container img {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.store-photo-container:hover::after {
-    opacity: 1;
+    object-fit: cover;
 }
 
 .photo-overlay {
@@ -199,54 +154,106 @@
     opacity: 1;
 }
 
-.photo-overlay i {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    display: block;
-}
-
-.photo-overlay span {
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.store-photo-container {
-    background: #e5e5e5;
-    position: relative;
-}
-
-.store-photo-container img {
+.store-photo-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
-@media screen and (max-width: 1200px) {
+.store-photo-container:hover::after {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .store-list-container {
+        display: flex;
+        flex-direction: column;
+        height: auto !important;
+        gap: 20px;
+    }
+
+    .store-items-wrap {
+        height: 280px !important;
+        overflow: hidden;
+        background: transparent !important;
+        border: none !important;
+        width: 100% !important; /* 다시 정상 너비로 */
+        margin: 0 !important;
+    }
+
+    .store-items {
+        height: 100% !important;
+        overflow-y: auto !important;
+        padding: 10px 12px 10px 0 !important; /* 오른쪽 패딩(12px) 추가하여 공간 확보 */
+        gap: 12px !important;
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* 매장 리스트 전용 스크롤바: 카드 오른쪽에 딱 맞게 배치 */
+    .store-items::-webkit-scrollbar {
+        width: 6px !important;
+        display: block !important;
+    }
+
+    .store-items::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.1) !important;
+        border-radius: 10px !important;
+    }
+
+    .store-items::-webkit-scrollbar-track {
+        background: transparent !important;
+    }
+
+    .store-card {
+        width: 100% !important;
+        min-height: 130px !important;
+        padding: 20px !important;
+        flex: none !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        border-radius: 15px !important;
+    }
+
+    /* 상세 정보(지도, 사진) 배치 */
     .store-detail-wrap {
-        grid-template-columns: 1fr;
-        height: auto;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        height: auto !important;
     }
 
     .map-container,
     .store-photo-container {
-        height: 400px;
+        width: 100% !important;
+        height: 280px !important;
+        flex: none !important;
+        border-radius: 20px !important;
+    }
+
+    .store-card h4 {
+        font-size: 1.2rem !important;
+        /* 폰트도 적당히 줄임 */
+        margin-bottom: 8px !important;
+    }
+
+    .store-card p {
+        font-size: 0.95rem !important;
+        margin-bottom: 5px !important;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .store-search {
-        padding: 20px;
-        margin-bottom: 30px;
-    }
-
-    .store-card {
-        min-width: 280px;
-    }
-}
-
-/* Gallery Modal Enhancements */
+/* Modal Styles */
 .modal-gallery-container {
     position: relative;
     width: 90%;
@@ -307,20 +314,13 @@
 }
 
 @media screen and (max-width: 1400px) {
-    .gallery-prev { left: 10px; background: rgba(0,0,0,0.3); }
-    .gallery-next { right: 10px; background: rgba(0,0,0,0.3); }
-}
-
-@media screen and (max-width: 768px) {
-    .modal-gallery-container {
-        width: 100%;
-        height: 60vh;
+    .gallery-prev {
+        left: 10px;
+        background: rgba(0, 0, 0, 0.3);
     }
-    
-    .gallery-prev,
+
     .gallery-next {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.3);
     }
 }

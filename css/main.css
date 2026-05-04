@@ -255,7 +255,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 
     /* 히어로: 풀블리드 + cover로 세로까지 채움(100% auto 시 아래가 검게 비는 현상 방지) */
     .hero {
@@ -272,8 +272,10 @@
     }
 
     .hero-slider .slide {
-        background-size: cover;
-        background-position: center 42%;
+        background-size: auto 110% !important;
+        /* 세로 높이를 110%로 키워 이동 여유분 확보 */
+        background-position: center 25% !important;
+        /* Y축 위치를 더 아래로 내림 */
         background-repeat: no-repeat;
     }
 
@@ -311,11 +313,19 @@
     }
 
     .hero-content {
+        display: block !important;
         max-width: 100%;
         text-align: center;
         padding-left: 15px;
         padding-right: 15px;
         box-sizing: border-box;
+    }
+
+    .hero-text-phase {
+        top: auto !important;
+        bottom: 20% !important;
+        /* 하단에서 20% 위로 배치 */
+        transform: translateX(0) !important;
     }
 }
 
@@ -422,7 +432,10 @@
 }
 
 @media screen and (max-width: 480px) {
-    .hero, .hero.scroll-hero, .hero-sticky-container {
+
+    .hero,
+    .hero.scroll-hero,
+    .hero-sticky-container {
         height: 80vh !important;
     }
 
@@ -448,25 +461,77 @@
         padding: 0 20px;
     }
 
-    .section-features .process-item {
-        padding: 40px 20px;
+    .process-item {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        text-align: left !important;
+        align-items: flex-end !important;
+        /* 타이틀과 영어 문구 바닥 정렬 */
+        padding: 30px 20px !important;
+        border-radius: 15px !important;
     }
 
-    .section-features .process-item h4 {
-        font-size: 1.8rem;
+    .process-item h4 {
+        order: 1 !important;
+        font-size: 1.35rem !important;
+        margin: 0 10px 12px 0 !important;
+        color: #F26649 !important;
+        display: block !important;
+        line-height: 1.1 !important;
     }
 
-    .horizontal-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center !important;
-        gap: 20px;
+    .process-item .process-tag {
+        order: 2 !important;
+        display: block !important;
+        font-size: 0.7rem !important;
+        color: #A68D85 !important;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin: 0 0 12px 0 !important;
+        /* 타이틀 하단 여백과 동일하게 설정 */
+        line-height: 1.1 !important;
     }
 
-    .horizontal-item .process-icon {
-        font-size: 3.5rem;
+    .process-item p {
+        order: 3 !important;
+        width: 100% !important;
+        display: block !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 12px !important;
+        color: #30221F !important;
+        font-weight: 600;
+        text-align: left !important;
+        word-break: keep-all;
+    }
+
+    .process-item .sub-desc {
+        order: 4 !important;
+        width: 100% !important;
+        display: block !important;
+        font-size: 0.85rem !important;
+        color: #8C7872 !important;
+        font-weight: 500;
+        line-height: 1.5 !important;
+        text-align: left !important;
+    }
+
+    /* 모바일에서 PC용 강제 줄바꿈 무시 및 자연스러운 줄바꿈 적용 */
+    .process-item p br,
+    .process-item .sub-desc br {
+        display: none !important;
+    }
+
+    /* 모바일에서 불필요한 장식 요소 숨김 */
+    .process-item .quote-mark,
+    .process-item .divider {
+        display: none !important;
     }
 }
+
+
 
 /* 메인 WHY US: 가로형 레이아웃 */
 .horizontal-item {

@@ -35,11 +35,6 @@
                 <li><a href="franchise.html">창업문의</a></li>
             </ul>
         </nav>
-        <div class="menu-toggle" id="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
     </header>
 
     <div class="floating-banners">
@@ -51,7 +46,7 @@
                 src="https://img.icons8.com/ios-filled/50/000000/news.png" alt="icon"></a>
     </div>
 
-    <section class="sub-hero" style="background-image: url('Image/대문_2.webp');">
+    <section class="sub-hero" style="background-image: url('Image/회사소개_대문.webp');">
         <div class="sub-hero-overlay"></div>
         <div class="menu-hero-container">
             <div class="menu-hero-content-left reveal">
@@ -69,12 +64,12 @@
             </div>
             <div class="menu-hero-content-right reveal">
                 <div class="menu-hero-stat">
-                    <div class="stat-value brand-font">Since</div>
-                    <div class="stat-label">진심이 시작된 순간</div>
+                    <div class="stat-value brand-font">진심</div>
+                    <div class="stat-label">돈까스 하나에 담아낸 깊은 정성</div>
                 </div>
                 <div class="menu-hero-stat">
-                    <div class="stat-value brand-font">Trust</div>
-                    <div class="stat-label">믿을 수 있는 철학</div>
+                    <div class="stat-value brand-font">완성</div>
+                    <div class="stat-label">맛부터 시스템까지 빈틈없는 완벽함</div>
                 </div>
             </div>
         </div>
@@ -93,7 +88,7 @@
                             우리는
                             돈까스 하나에만 집중합니다.</p>
                         <p class="brand-body">
-                            저희는 외식업을 운영하게 위해 많은 인력과 시간이 들어가는 부분을 업계 최초 수제 돈까스를 완제품 공급을 구현하며 타 브랜드에 비하여 훨씬 손쉽고 간편하게 매장운영을
+                            저희는 외식업을 운영하기 위해 많은 인력과 시간이 들어가는 부분을 업계 최초 수제 돈까스 완제품 공급을 구현하며 타 브랜드에 비하여 훨씬 손쉽고 간편하게 매장운영을
                             하실 수 있도록 만들었습니다.
                         </p>
                         <p class="brand-body">
@@ -103,8 +98,13 @@
                     </div>
 
                     <div class="brand-feature-graphic">
-                        <img src="Image/돈빠로고.svg" alt="돈빠 공식 로고" class="brand-logo-img">
+                        <picture>
+                            <source srcset="Image/돈빠_로고_유형_모바일.webp" media="(max-width: 768px)">
+                            <img src="Image/돈빠_로고_유형.webp" alt="돈빠 공식 로고" class="brand-logo-img">
+                        </picture>
                     </div>
+                </div>
+            </div>
         </section> <!-- Close the BRAND section -->
 
         <section class="cooking-system-section reveal">
@@ -118,42 +118,21 @@
                     </div>
                 </div>
 
-
-
-                <div class="step-image-box reveal">
-                    <div class="step-images-list">
-                        <picture>
-                            <source media="(max-width: 600px)" srcset="Image/about/모바일_1.webp">
-                            <img src="Image/about/1단계.webp" alt="1단계 조리" loading="lazy">
-                        </picture>
-                        <picture>
-                            <source media="(max-width: 600px)" srcset="Image/about/모바일_2.webp">
-                            <img src="Image/about/2단계.webp" alt="2단계 조리" loading="lazy">
-                        </picture>
-                        <picture>
-                            <source media="(max-width: 600px)" srcset="Image/about/모바일_3.webp">
-                            <img src="Image/about/3단계.webp" alt="3단계 조리" loading="lazy">
-                        </picture>
-                        <picture>
-                            <source media="(max-width: 600px)" srcset="Image/about/모바일_4.webp">
-                            <img src="Image/about/4단계.webp" alt="4단계 조리" loading="lazy">
-                        </picture>
-                    </div>
-                </div>
-
                 <div class="comparison-container reveal">
                     <div class="bar-label-top">※ 타사 6단계 조리 과정 ※</div>
-                    <div class="comparison-bar">
-                            <div class="bar-item muted">① 원료육 입고 <br class="mobile-br"> 및 손질</div>
-                            <div class="bar-item muted">② 연육 · 염지</div>
-                            <div class="bar-item muted">③ 반죽 및 <br class="mobile-br">빵가루 입히기</div>
-                        <div class="mobile-comparison-msg">
-                            <i class="ri-arrow-up-s-line"></i>
-                            <span>돈빠는 타사 3개 과정을 본사에서 직접 해결하여 <br class="mobile-br"> 매장에 납품합니다.</span>
+                    <div class="comparison-bar-wrapper">
+                        <div class="comparison-bar">
+                            <div class="bar-item muted reveal">① 원료육 입고 <br class="mobile-br"> 및 손질</div>
+                            <div class="bar-item muted reveal">② 연육 · 염지</div>
+                            <div class="bar-item muted reveal">③ 반죽 및 <br class="mobile-br">빵가루 입히기</div>
+                            <div class="mobile-comparison-msg">
+                                <i class="ri-arrow-up-s-line"></i>
+                                <span>돈빠는 타사 3개 과정을 본사에서 직접 해결하여 <br class="mobile-br"> 매장에 납품합니다.</span>
+                            </div>
+                            <div class="bar-item highlight reveal">④ 튀기기</div>
+                            <div class="bar-item highlight reveal">⑤ 건지기</div>
+                            <div class="bar-item highlight reveal">⑥ 담기</div>
                         </div>
-                        <div class="bar-item highlight">④ 튀기기</div>
-                        <div class="bar-item highlight">⑤ 건지기</div>
-                        <div class="bar-item highlight">⑥ 담기</div>
                     </div>
 
                     <div class="comparison-info-text">
@@ -161,34 +140,67 @@
                         돈빠는 타사 3개 과정을 본사에서 직접 해결하여 매장에 납품합니다.
                     </div>
                 </div>
+
+                <div class="bar-label-top cooking-system-grid-label">※ 돈빠 4단계 조리 과정 ※</div>
+                <div class="cooking-steps-grid reveal">
+                    <!-- Step 1 -->
+                    <div class="step-card reveal">
+                        <div class="step-img-box">
+                            <img src="Image/about/1단계.webp" alt="1단계">
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card reveal">
+                        <div class="step-img-box">
+                            <img src="Image/about/2단계.webp" alt="2단계">
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card reveal">
+                        <div class="step-img-box">
+                            <img src="Image/about/3단계.webp" alt="3단계">
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-card reveal">
+                        <div class="step-img-box">
+                            <img src="Image/about/4단계.webp" alt="4단계">
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="efficiency-grid reveal">
-                <div class="efficiency-item">
-                    <div class="efficiency-icon">
-                        <i class="ri-money-dollar-circle-line"></i>
+            <div class="efficiency-grid">
+                <div class="efficiency-container">
+                    <div class="efficiency-item reveal">
+                        <div class="efficiency-icon">
+                            <i class="ri-money-dollar-circle-line"></i>
+                        </div>
+                        <div class="efficiency-text">
+                            <h5>인건비 절감 <span class="eng-tag">LABOR SAVING</span></h5>
+                            <p>쉽고 간단한 조리 방식으로 인력을 최소화하여 <br>매장의 인건비 부담을 획기적으로 낮췄습니다.</p>
+                        </div>
                     </div>
-                    <div class="efficiency-text">
-                        <h5>인건비 절감</h5>
-                        <p>쉽고 간단한 조리 방식으로 인력을 최소화하여 <br>매장의 인건비 부담을 획기적으로 낮췄습니다.</p>
+                    <div class="efficiency-item reveal">
+                        <div class="efficiency-icon">
+                            <i class="ri-time-line"></i>
+                        </div>
+                        <div class="efficiency-text">
+                            <h5>조리시간 단축 <span class="eng-tag">TIME SAVING</span></h5>
+                            <p>간편한 조리 공정으로 고객 대기 시간을 줄이고 높은 회전율로 매장의 수익성을 높입니다.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="efficiency-item">
-                    <div class="efficiency-icon">
-                        <i class="ri-time-line"></i>
-                    </div>
-                    <div class="efficiency-text">
-                        <h5>조리시간 단축</h5>
-                        <p>간편한 조리 공정으로 고객 대기 시간을 줄이고 <br>높은 회전율로 매장의 수익성을 극대화합니다.</p>
-                    </div>
-                </div>
-                <div class="efficiency-item">
-                    <div class="efficiency-icon">
-                        <i class="ri-hand-heart-line"></i>
-                    </div>
-                    <div class="efficiency-text">
-                        <h5>업무강도 완화</h5>
-                        <p>본사에서 가공된 원재료를 공급하여 매장에서의 <br>조리 난이도와 노동 강도를 대폭 줄였습니다.</p>
+                    <div class="efficiency-item reveal">
+                        <div class="efficiency-icon">
+                            <i class="ri-hand-heart-line"></i>
+                        </div>
+                        <div class="efficiency-text">
+                            <h5>업무강도 완화 <span class="eng-tag">EFFORT SAVING</span></h5>
+                            <p>본사에서 원재료를 공급하여 매장에서의 조리 난이도와 노동 강도를 대폭 줄였습니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -249,12 +261,12 @@
                         <div class="history-left">
                             <div class="history-num">04</div>
                             <div class="history-title-box">
-                                <span class="history-date">AUTO SYSTEM 04</span>
-                                <h4>오토 창업 가능</h4>
+                                <span class="history-date">SYSTEM 04</span>
+                                <h4>투자형 매장 창업 가능</h4>
                             </div>
                         </div>
                         <div class="history-right">
-                            <p>본사에서 제공하는 규격화된 제품과 표준화된 레시피를 통해 초보자도 손쉬운 조리가 가능하며, 투자형 오토 매장 창업이 가능합니다.</p>
+                            <p>본사에서 제공하는 규격화된 제품과 표준화된 레시피를 통해 초보자도 손쉬운 조리가 가능하며, 투자형 매장 창업이 가능합니다.</p>
                         </div>
                     </div>
                     <div class="history-footer reveal">
@@ -300,8 +312,8 @@
                     <img src="Image/logo_withplan.png" alt="Withplan Logo">
                 </div>
                 <ul class="footer-info-list">
-                    <li>상호 : 주식회사 위드플랜 | 대표 : 이병운</li>
-                    <li>주소 : 경상북도 경산시 청운로29 2층</li>
+                    <li>상호 : 위드플랜 | 대표 : 이병운</li>
+                    <li>주소 : 경상북도 경산시 청운로29, 2층</li>
                     <li>사업자등록번호 : 329-40-01449</li>
                 </ul>
             </div>

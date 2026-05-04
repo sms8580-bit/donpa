@@ -121,6 +121,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     background-color: var(--bg-color);
@@ -241,14 +245,14 @@ header {
 }
 
 header.scrolled {
-    background: var(--primary-color);
+    background: rgba(48, 34, 31, 0.9);
     height: 80px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header.scrolled .logo,
 header.scrolled .nav-links li a {
-    color: var(--text-color);
+    color: #ffffff;
 }
 
 .logo {
@@ -609,77 +613,64 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .menu-toggle {
-        display: flex;
+        display: none !important;
+    }
+
+    header {
+        height: auto;
+        min-height: 50px;
+        flex-direction: row;
+        padding: 12px 5%;
+        gap: 0;
+        justify-content: center;
+    }
+
+    header.scrolled {
+        height: auto;
+        padding: 10px 5%;
+    }
+
+    .logo {
+        display: none !important;
     }
 
     .nav-links {
-        position: fixed;
-        top: 0;
-        left: 0;
-
+        position: static;
         width: 100%;
-
-        height: 100vh;
-        background: rgba(245, 237, 216, 0.95);
-
-        backdrop-filter: blur(10px);
-
-        -webkit-backdrop-filter: blur(10px);
-        flex-direction: column;
+        height: auto;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 40px;
-
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.4s ease;
-        z-index: 1000;
-    }
-
-    .nav-links.active {
+        gap: 18px;
         opacity: 1;
         pointer-events: auto;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        z-index: 1;
     }
 
     .nav-links li {
-        opacity: 0;
-        transform: translateY(-20px);
-        transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-
-    .nav-links.active li {
-        animation: slideDownFadeIn 0.5s ease forwards;
-        opacity: 0;
-    }
-
-    .nav-links.active li:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-
-    .nav-links.active li:nth-child(2) {
-        animation-delay: 0.2s;
-    }
-
-    .nav-links.active li:nth-child(3) {
-        animation-delay: 0.3s;
-    }
-
-    .nav-links.active li:nth-child(4) {
-        animation-delay: 0.4s;
-    }
-
-    .nav-links.active li:nth-child(5) {
-        animation-delay: 0.5s;
+        opacity: 1;
+        transform: none;
+        animation: none;
     }
 
     .nav-links li a {
-        font-size: 1.8rem;
-
+        font-size: 16px;
         font-weight: 700;
-        color: var(--text-color);
+        color: var(--white);
+        padding: 5px 0;
+        white-space: nowrap;
+    }
 
+    header.scrolled .nav-links li a {
+        color: var(--white);
     }
 
     @keyframes slideDownFadeIn {
@@ -722,13 +713,13 @@ footer {
 }
 
 .sub-hero {
-    height: 50vh;
-    min-height: 300px;
+    min-height: 450px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0 5%;
+    padding: 130px 5% 80px; /* 헤더 높이만큼 상단 패딩 추가 */
     overflow: hidden;
     color: var(--white);
     background-size: cover;
@@ -742,7 +733,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6); /* 오버레이 농도 최적화 */
     z-index: 1;
 }
 
@@ -813,7 +804,7 @@ footer {
 }
 
 .menu-hero-breadcrumb a:last-child {
-    color: #FAA63F;
+    color: #FFFFFF;
     font-weight: 700;
 }
 
@@ -1139,7 +1130,6 @@ footer {
 .origin-title .highlight {
     color: #FAA63F;
     font-size: clamp(2.5rem, 4vw + 0.5rem, 3.4rem);
-    font-style: italic;
     font-family: 'HsSaemaul', sans-serif;
     margin-left: 10px;
 }
@@ -1166,9 +1156,13 @@ footer {
 }
 
 .scrolling-content {
-    display: inline-flex;
-    animation: scroll-left 30s linear infinite;
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 80px;
+    animation: scroll-left 60s linear infinite !important; /* 강제 실행 */
     will-change: transform;
+    transform: translateZ(0); /* GPU 가속 */
 }
 
 .scroll-item {
@@ -1177,7 +1171,7 @@ footer {
     color: #FFFFFF;
     font-size: 1.0rem;
     font-weight: 600;
-    padding: 0 40px;
+    padding: 0; /* 패딩 제거 후 부모의 gap으로 간격 조절 */
 }
 
 .scroll-item::before {
@@ -1190,12 +1184,10 @@ footer {
 
 @keyframes scroll-left {
     0% {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
-
     100% {
-        transform: translateX(-33.333%);
-
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
@@ -1291,10 +1283,15 @@ footer {
     }
 
     .sub-hero h1.menu-hero-title {
-        font-size: clamp(2.75rem, 8.5vw, 3.4rem);
-        line-height: 1.12;
+        font-size: 2.2rem;
+        line-height: 1.2;
         margin-bottom: 0;
         font-weight: 400;
+        word-break: keep-all;
+    }
+
+    .sub-hero h1.menu-hero-title br {
+        display: none;
     }
 
     .menu-hero-desc br {
@@ -1378,22 +1375,16 @@ footer {
     }
 
     header {
-        height: 70px;
-        padding: 0 15px;
+        height: auto;
+        min-height: 50px;
+        padding: 12px 15px;
         justify-content: center !important;
         position: fixed !important;
+        top: 35px !important; /* 상단 바 높이만큼 유지 */
     }
 
     .logo {
-        flex: 1 !important;
-        display: flex !important;
-        justify-content: center !important;
-        text-align: center !important;
-    }
-
-    .logo img {
-        height: 50px !important;
-        margin: 0 auto !important;
+        display: none !important;
     }
 
     .menu-toggle {
@@ -1405,8 +1396,9 @@ footer {
     }
 
     .sub-hero h1.menu-hero-title {
-        font-size: clamp(2.65rem, 8vw, 3.25rem);
-        line-height: 1.12;
+        font-size: 2rem;
+        line-height: 1.2;
+        word-break: keep-all;
     }
 
     .footer-nav {
@@ -1543,12 +1535,15 @@ footer {
     transition: transform 0.3s ease;
 
     /* 스크롤바 숨기기 */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .modal-content::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
+    /* Chrome, Safari, Opera */
 }
 
 .modal.active .modal-content {
@@ -1572,13 +1567,16 @@ footer {
 .modal-body {
     line-height: 1.8;
     color: var(--text-color);
-    font-weight: 500; /* 본문 두께 높임 */
+    font-weight: 500;
+    /* 본문 두께 높임 */
 }
 
 .modal-body h2 {
-    font-family: 'Noto Sans KR', sans-serif; /* 본문 폰트로 변경 */
+    font-family: 'Noto Sans KR', sans-serif;
+    /* 본문 폰트로 변경 */
     font-size: 1.8rem;
-    font-weight: 800; /* 제목 두께 강조 */
+    font-weight: 800;
+    /* 제목 두께 강조 */
     margin-bottom: 30px;
     text-align: center;
 }
@@ -1592,16 +1590,19 @@ footer {
     color: var(--primary-hover);
     margin-bottom: 10px;
     font-size: 1.1rem;
-    font-weight: 700; /* 소제목 두께 강조 */
+    font-weight: 700;
+    /* 소제목 두께 강조 */
 }
 
 /* Footer Company Logo */
 .footer-company-logo {
-    margin: 0 0 25px; /* 제목이 사라졌으므로 상단 마진을 0으로 조정 */
+    margin: 0 0 25px;
+    /* 제목이 사라졌으므로 상단 마진을 0으로 조정 */
 }
 
 .footer-company-logo img {
-    height: 55px; /* 35px -> 55px로 확대 */
+    height: 55px;
+    /* 35px -> 55px로 확대 */
     width: auto;
     object-fit: contain;
     /* filter: brightness(0) invert(1); <- 필요 시 화이트 톤 주석 해제 */
@@ -1612,8 +1613,10 @@ footer {
         margin: 10px 0 20px;
         text-align: center;
     }
+
     .footer-company-logo img {
-        height: 45px; /* 모바일에서는 살짝 조절 */
+        height: 45px;
+        /* 모바일에서는 살짝 조절 */
     }
 }
 

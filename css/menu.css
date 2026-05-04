@@ -433,7 +433,7 @@
 
     /* 카테고리 탭: 가로 스크롤 없이 한 화면에 4개 균등 배치 */
     .category-filter {
-        overflow-x: visible;
+        overflow-x: hidden;
         justify-content: space-between;
         gap: 4px;
         flex-wrap: nowrap;
@@ -474,55 +474,68 @@
 
     .menu-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
-        padding: 0 10px;
+        gap: 15px 10px !important;
+        margin-left: -10px !important;
+        /* 컨테이너 여백 상쇄하여 이미지 키움 */
+        margin-right: -10px !important;
+        width: calc(100% + 20px) !important;
+        padding: 0 5px !important;
     }
 
     .menu-item {
-        border-radius: 10px;
+        border-radius: 12px;
         box-shadow: none;
+        background: transparent !important;
+        overflow: visible !important;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .menu-img {
         aspect-ratio: 1 / 1;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
     .menu-info {
+        position: static !important;
         opacity: 1 !important;
-        background: rgba(0, 0, 0, 0.45);
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
-        padding: 12px 8px;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        padding: 0 !important;
         display: flex !important;
         flex-direction: column !important;
-        justify-content: center !important;
         align-items: center !important;
         text-align: center;
+        pointer-events: auto !important;
     }
 
     .menu-info h3 {
-        transform: translateY(0) !important;
+        color: #333 !important;
         margin-bottom: 6px !important;
-        font-size: 1.1rem;
-        font-weight: 100;
-        word-break: keep-all;
+        font-size: 1.4rem !important;
+        /* 확실하게 확대 */
+        font-weight: 100 !important;
+        line-height: 1.2;
     }
 
     .menu-desc {
-        display: block !important;
-        font-size: 0.75rem !important;
-        line-height: 1.4 !important;
-        opacity: 0.95 !important;
-        transform: none !important;
-        word-break: keep-all;
+        display: none !important;
+        /* 설명 완벽 삭제 */
     }
 
-    .menu-info .price {
+    .price {
         display: block !important;
-        font-size: 0.95rem !important;
-        font-weight: 700;
-        color: #FAA63F;
-        margin-top: 4px;
+        font-size: 1.25rem !important;
+        /* 가격을 조금 더 크게 */
+        color: #F26649 !important;
+        /* 브랜드 주황색 */
+        font-weight: 800 !important;
+        margin-top: 5px !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     .menu-composition {
@@ -534,23 +547,78 @@
         box-shadow: none !important;
     }
 
+    .origin-section {
+        padding: 60px 0 !important;
+    }
+
+    .origin-header {
+        margin-bottom: 25px !important;
+    }
+
     .origin-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0 !important;
     }
 
     .origin-item {
-        padding: 30px 15px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 10px 5px !important;
+        /* 상단 패딩 더 축소 */
+        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        min-height: 160px !important;
+        /* 최소 높이 더 축소 */
+        text-align: center;
     }
 
-    .origin-item:last-child {
-        border-bottom: none;
+    .origin-item:nth-child(2n) {
+        border-right: none !important;
+    }
+
+    .origin-item:nth-child(n+3) {
+        border-bottom: none !important;
     }
 
     .origin-item h4 {
-        font-size: 1.15rem;
+        font-size: 0.9rem !important;
+        margin: 0 !important;
+        /* 마진 완벽 제거 */
+        word-break: keep-all !important;
+        line-height: 1.1 !important;
+        /* 행간 완벽 압축 */
+        height: auto !important;
+        display: block !important;
+        color: #333 !important;
+        font-weight: 700 !important;
+    }
+
+    .origin-item p {
+        font-size: 0.75rem !important;
+        line-height: 1.2 !important;
+        /* 행간 완벽 압축 */
+        color: #777 !important;
+        margin: 0 !important;
+        /* 마진 완벽 제거 */
+        word-break: keep-all !important;
+        flex-grow: 0 !important;
+    }
+
+    .origin-icon {
+        width: 40px !important;
+        /* 더 작게 */
+        height: 40px !important;
+        margin-bottom: 2px !important;
+        /* 간격 최소화 */
+    }
+
+    .origin-badge {
+        font-size: 0.75rem !important;
+        padding: 4px 15px !important;
+        margin-top: auto !important;
+        display: inline-block !important;
     }
 
     .allergy-text {
@@ -567,36 +635,40 @@
 
 @media screen and (max-width: 480px) {
     .menu-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-        padding: 0 15px;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px 10px !important;
+        padding: 0 10px;
     }
 
     .menu-info h3 {
-        font-size: 1.5rem !important;
+        font-size: 1.25rem !important;
+        /* 소형 모바일에서도 충분히 크게 */
+        font-weight: 100 !important;
     }
 
     .menu-info .price {
-        font-size: 1.1rem !important;
+        font-size: 1.05rem !important;
+        font-weight: 800 !important;
     }
 
     .origin-item {
-        padding: 40px 20px !important;
+        padding: 15px 5px !important;
+        min-height: 210px !important;
+        /* 컴팩트한 높이 */
     }
 
     .origin-icon {
-        width: 100px;
-        height: 100px;
+        width: 55px !important;
+        height: 55px !important;
     }
 
     .filter-btn {
-        padding: 10px 3px !important;
-        min-width: 0 !important;
-        font-size: 0.85rem;
+        padding: 8px 2px !important;
+        font-size: 0.8rem;
     }
 
     .filter-btn i {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .mobile-br {

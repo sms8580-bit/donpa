@@ -30,9 +30,8 @@
 
 .contact-title .highlight {
     color: #FAA63F;
-    font-style: italic;
+    font-style: normal;
     display: inline-block;
-    transform: skewX(-5deg);
 }
 
 .contact-desc {
@@ -316,6 +315,12 @@
     background: #FFF3E0;
 }
 
+.cost-accordion-title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .cost-accordion-title {
     font-size: 1.8rem;
     font-weight: 800;
@@ -377,8 +382,114 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.cost-zoom-guide {
+    display: none;
+    /* 기본적으로 숨김 */
+    font-size: 0.9rem;
+    color: #F26649;
+    font-weight: 600;
+    align-items: center;
+    gap: 5px;
+}
+
 .table-responsive {
     overflow-x: auto;
+}
+
+/* Table Zoom Modal (Mobile Only) */
+@media screen and (max-width: 768px) {
+    .cost-zoom-guide {
+        display: flex !important;
+        font-size: 0.85rem;
+        color: #F26649;
+        font-weight: 600;
+        margin-left: 21px;
+        /* 타이틀 바 두께(6px) + 간격(15px) */
+    }
+
+    .table-responsive {
+        cursor: pointer;
+    }
+
+    /* Table Zoom Modal 스타일 복구 */
+    .table-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 10000;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .table-modal.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .table-modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 2.2rem;
+        z-index: 10001;
+    }
+
+    .table-modal-content {
+        width: 100%;
+        height: 85%;
+        overflow: auto;
+        background: #FFF8EC;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    #modal-table-container {
+        min-width: 800px;
+        /* 표 크게 유지 */
+        padding: 15px;
+    }
+
+    .table-modal-hint {
+        color: rgba(255, 255, 255, 0.8);
+        margin-top: 15px;
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    /* Modal Content Optimization */
+    #modal-table-container .cost-accordion-content {
+        padding: 0 !important;
+    }
+
+    #modal-table-container .cost-table-header {
+        margin-bottom: 25px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 15px;
+    }
+
+    #modal-table-container .cost-standard {
+        font-size: 1.1rem;
+        color: #30221F;
+        background: #F5EDD8;
+    }
+
+    #modal-table-container .cost-note {
+        margin-top: 10px;
+        padding: 0;
+        background: none;
+        border-radius: 0;
+        font-size: 0.85rem;
+        color: #777;
+        line-height: 1.4;
+        /* 줄 높이 축소 */
+    }
 }
 
 .cost-table {
@@ -443,7 +554,7 @@
 }
 
 .cost-table .accent {
-    color: #F26649;
+    color: #999;
     font-weight: 600;
 }
 
@@ -618,216 +729,157 @@
     }
 }
 
-/* Process Section Slider Layout */
+/* Process Section Layout (Updated to static image) */
 .process-section {
-    padding: 120px 0 80px;
-    background-color: #F5EDD8;
+    padding: 120px 0 100px;
     overflow: hidden;
 }
 
-.process-flex-container {
-    display: flex;
-    align-items: center;
-    gap: 80px;
-    max-width: var(--container-width);
-    margin: 0 auto;
-    /* Removed padding to align perfectly with the box below */
-}
-
-.process-header-side {
-    flex: 0 0 350px;
-    text-align: left;
-}
-
-.process-quote {
-    font-size: 2.5rem;
-    color: rgba(242, 102, 73, 0.3);
-    display: block;
-    line-height: 1;
-    /* Balanced line-height */
-}
-
-.process-side-title {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin: 12px 0;
-    /* Restored some margin */
-    font-weight: 100;
-}
-
-.process-side-title .highlight {
-    color: #FAA63F;
-    /* Sub 1 Color */
-}
-
-.process-side-desc {
-    font-size: 1.15rem;
+.process-side-desc-inline {
+    display: inline-block;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.1rem;
     color: #666;
-    line-height: 1.5;
-    word-break: keep-all;
-    margin-bottom: 10px;
-    /* Restored some margin */
+    margin-left: 30px;
+    font-weight: 500;
+    vertical-align: middle;
+    letter-spacing: 0;
 }
 
-.process-slider-side {
-    flex: 1;
-    overflow-x: auto;
-    padding: 60px 0 30px;
-    /* Reduced vertical padding */
-    scrollbar-width: thin;
-    scrollbar-color: #F26649 rgba(0, 0, 0, 0.05);
-}
-
-.process-slider-side::-webkit-scrollbar,
-.table-responsive::-webkit-scrollbar {
-    height: 18px;
-    display: block;
-}
-
-.process-slider-side::-webkit-scrollbar-track,
-.table-responsive::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.03);
-    border-radius: 12px;
-}
-
-.process-slider-side::-webkit-scrollbar-thumb,
-.table-responsive::-webkit-scrollbar-thumb {
-    background: #e0d5c1;
-    border-radius: 12px;
-    border: 4px solid transparent;
-    background-clip: padding-box;
-}
-
-.process-slider-side::-webkit-scrollbar-thumb:hover,
-.table-responsive::-webkit-scrollbar-thumb:hover {
-    background-color: var(--primary-color);
-}
-
-.process-slider-side::-webkit-scrollbar-button:single-button:horizontal:decrement,
-.table-responsive::-webkit-scrollbar-button:single-button:horizontal:decrement {
-    height: 24px;
-    width: 48px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2330221F' d='M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z'/%3E%3C/svg%3E");
-    cursor: pointer;
-}
-
-.process-slider-side::-webkit-scrollbar-button:single-button:horizontal:increment,
-.table-responsive::-webkit-scrollbar-button:single-button:horizontal:increment {
-    height: 24px;
-    width: 48px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2330221F' d='M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z'/%3E%3C/svg%3E");
-    cursor: pointer;
-}
-
-.process-track {
-    display: flex;
-    gap: 30px;
-}
-
-.process-card {
-    flex: 0 0 320px;
-    height: 320px;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 50%;
+.process-layers-container {
     position: relative;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    aspect-ratio: 1380 / 690;
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column;
 }
 
-.process-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-    /* Softer shadow on hover */
-}
-
-/* Gradient-like progression for Steps 1-7 - Starting from light ivory */
-.process-track .process-card:nth-child(1) {
-    background-color: #FFFBF5;
-}
-
-.process-track .process-card:nth-child(2) {
-    background-color: #FFF5E7;
-}
-
-.process-track .process-card:nth-child(3) {
-    background-color: #FFEFD9;
-}
-
-.process-track .process-card:nth-child(4) {
-    background-color: #FFE9CC;
-}
-
-.process-track .process-card:nth-child(5) {
-    background-color: #FFE2B8;
-}
-
-.process-track .process-card:nth-child(6) {
-    background-color: #FFDBA4;
-}
-
-.process-track .process-card:nth-child(7) {
-    background-color: #FFD490;
-}
-
-.process-card-num {
+.process-mobile-img {
     display: none;
 }
 
-.process-card-icon {
-    width: 80px;
-    height: 80px;
-    background: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.2rem;
-    color: #F26649;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 20px rgba(48, 34, 31, 0.08);
-    flex-shrink: 0;
+.hover-detector {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    cursor: default;
 }
 
-.process-card h4 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: #30221F;
-    /* Unified dark brown */
-    font-weight: 800;
+.step-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    /* Let clicks pass to detectors */
+    z-index: 1;
 }
 
-.process-desc-main {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: #30221F;
-    /* Unified dark brown */
-    margin-bottom: 8px;
+.process-section.active .step-wrapper {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.process-desc-sub {
-    font-size: 0.95rem;
-    color: #30221F;
-    /* Unified dark brown */
-    line-height: 1.6;
-    word-break: keep-all;
-    font-weight: 500;
-    opacity: 0.9;
+.process-step-layer {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+        filter 0.3s ease;
+    cursor: default;
 }
 
-/* Grand Open Card Special Style */
-.process-card.grand-open {
-    background-color: #FAA63F !important;
+/* Hover Detection Logic - Targets the inner layer without delay */
+.d-1:hover~.step-1 .process-step-layer,
+.d-2:hover~.step-2 .process-step-layer,
+.d-3:hover~.step-3 .process-step-layer,
+.d-4:hover~.step-4 .process-step-layer,
+.d-5:hover~.step-5 .process-step-layer,
+.d-6:hover~.step-6 .process-step-layer,
+.d-7:hover~.step-7 .process-step-layer,
+.d-8:hover~.step-8 .process-step-layer {
+    transform: translateY(-12px) scale(1.03);
+    filter: brightness(1.08);
 }
+
+/* Sequential entry delays (Applies only to wrappers) */
+.step-1 {
+    transition-delay: 0.1s;
+}
+
+.step-2 {
+    transition-delay: 0.3s;
+}
+
+.step-3 {
+    transition-delay: 0.5s;
+}
+
+.step-4 {
+    transition-delay: 0.7s;
+}
+
+.step-5 {
+    transition-delay: 0.9s;
+}
+
+.step-6 {
+    transition-delay: 1.1s;
+}
+
+.step-7 {
+    transition-delay: 1.3s;
+}
+
+.step-8 {
+    transition-delay: 1.5s;
+}
+
+/* Mobile Adjustment */
+@media screen and (max-width: 768px) {
+    .process-layers-container {
+        display: block !important;
+        aspect-ratio: auto !important;
+        height: auto !important;
+        margin-top: 40px !important;
+        padding: 0 !important;
+    }
+
+    .process-mobile-img {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        image-rendering: -webkit-optimize-contrast;
+        /* 선명도 최적화 */
+        image-rendering: crisp-edges;
+    }
+
+    .hover-detector,
+    .step-wrapper {
+        display: none !important;
+    }
+
+    .process-section {
+        padding: 60px 0 !important;
+    }
+
+    .process-side-desc-inline {
+        display: block !important;
+        font-size: 0.9rem !important;
+        margin-left: 0 !important;
+        margin-top: 10px !important;
+        text-align: center;
+    }
+}
+
 
 @media screen and (max-width: 640px) {
     .franchise-contact {
@@ -903,26 +955,26 @@
         padding: 20px;
     }
 
-    .process-flex-container {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
-        padding: 0 20px;
-    }
-
-    .process-header-side {
-        flex: none;
-        width: 100%;
-        text-align: center;
-    }
-
     .process-side-title {
         font-size: 2.2rem;
+        margin-bottom: 10px;
     }
 
-    .process-card {
-        flex: 0 0 280px;
-        height: 280px;
+    .process-side-desc-inline {
+        display: block;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .process-title-centered {
+        margin-bottom: 40px;
+    }
+
+    .franchise-cost .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     .cost-accordion-header {
@@ -949,47 +1001,5 @@
     .contact-form-card .form-desc,
     .contact-form-card h3 {
         display: none !important;
-    }
-}
-
-.process-card.grand-open .process-card-num {
-    background-color: #F26649;
-}
-
-.process-card.grand-open h4,
-.process-card.grand-open .process-desc-sub {
-    color: #ffffff;
-}
-
-.process-card.grand-open .process-card-icon {
-    color: #F26649;
-    background: #ffffff;
-}
-
-@media (max-width: 1300px) {
-    .process-side-title {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 1100px) {
-    .process-flex-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 40px;
-        padding: 0 5%;
-    }
-
-    .process-header-side {
-        flex: 1;
-        width: 100%;
-        text-align: center;
-    }
-
-    .process-slider-side {
-        width: calc(100% + 5%);
-        margin-right: -5%;
-        padding-right: 5%;
-        padding-top: 40px;
     }
 }

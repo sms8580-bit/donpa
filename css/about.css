@@ -3,19 +3,18 @@
 }
 
 .brand-section {
-    padding: 100px 5%;
+    padding: 100px 0;
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    /* Expand right side for logo */
+    grid-template-columns: 0.75fr 1.25fr;
+    /* Further expand right side for logo as requested */
     gap: 80px;
     align-items: center;
-    max-width: var(--container-width);
-    margin: 0 auto;
+    width: 100%;
 }
 
 .brand-feature-graphic {
     position: relative;
-    border-radius: 40px;
+    border-radius: 0;
     overflow: hidden;
     padding: 0;
     /* Remove padding to maximize logo size */
@@ -26,8 +25,8 @@
 }
 
 .brand-logo-img {
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: auto;
     object-fit: contain;
     /* Don't crop the logo */
     image-rendering: -webkit-optimize-contrast;
@@ -36,9 +35,7 @@
     transition: var(--transition);
 }
 
-.brand-feature-graphic:hover .brand-logo-img {
-    transform: scale(1.02);
-}
+
 
 
 .brand-title {
@@ -52,7 +49,7 @@
 
 .brand-title em {
     font-size: 4.5rem;
-    font-style: italic;
+    font-style: normal;
     color: #FAA63F;
 }
 
@@ -185,7 +182,7 @@
 }
 
 .history-footer h3 em {
-    font-style: italic;
+    font-style: normal;
     color: #FAA63F;
     /* Main brand color */
 }
@@ -207,7 +204,7 @@
 }
 
 .history-title em {
-    font-style: italic;
+    font-style: normal;
     color: #FAA63F;
 }
 
@@ -610,7 +607,7 @@
 }
 
 .philosophy-title em {
-    font-style: italic;
+    font-style: normal;
     color: #FAA63F;
 }
 
@@ -689,6 +686,7 @@
         flex-direction: column;
         gap: 0;
         text-align: center;
+        padding-top: 20px !important; /* 상단 여백 추가 축소 */
     }
 
     .brand-text {
@@ -708,7 +706,18 @@
 
     .brand-feature-graphic {
         order: 3;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
+        margin-left: -5.5% !important;
+        margin-right: -5.5% !important;
+        width: calc(100% + 11%) !important;
+        background: transparent !important; /* 배경 투명하게 변경 */
+        padding: 0 !important; /* 패딩 제거 */
+        border-radius: 0 !important;
+    }
+
+    .brand-logo-img {
+        width: 100% !important;
+        transform: scale(1);
     }
 
     .brand-text .brand-body {
@@ -852,49 +861,7 @@
     margin-bottom: 10px;
 }
 
-.step-image-box {
-    max-width: 1600px;
-    /* Further increased size */
-    margin: 80px auto;
-}
 
-.step-images-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.step-images-list picture:nth-child(1) img { animation-delay: 0s; }
-.step-images-list picture:nth-child(2) img { animation-delay: 1.2s; }
-.step-images-list picture:nth-child(3) img { animation-delay: 2.4s; }
-.step-images-list picture:nth-child(4) img { animation-delay: 3.6s; }
-
-.step-images-list img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    mix-blend-mode: multiply;
-    animation: scaleSteps 4.8s infinite ease-in-out;
-}
-
-@keyframes scaleSteps {
-
-    0%,
-    100% {
-        transform: scale(1);
-        filter: brightness(1);
-    }
-
-    25% {
-        transform: scale(1.08);
-        filter: brightness(1.05);
-    }
-
-    50% {
-        transform: scale(1);
-        filter: brightness(1);
-    }
-}
 
 .cooking-system-subtitle-box p {
     font-family: 'Noto Sans KR', sans-serif;
@@ -905,51 +872,44 @@
 
 .cooking-steps-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    /* Remove gap to manage connectors better */
-    max-width: 1200px;
-    margin: 60px auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 1500px;
+    margin: 0 auto 80px;
     position: relative;
+    --float-y: -40px; /* 기본 상승 높이 */
 }
 
 .step-card {
     text-align: center;
     position: relative;
-    padding: 0 20px;
+    padding: 0 5px;
 }
 
-/* Connecting Line */
+/* Connecting Line Removed */
 .step-card:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 30%;
-    /* Align with the middle of the image box */
-    right: -20px;
-    width: 40px;
-    height: 2px;
-    background: rgba(242, 102, 73, 0.2);
+    display: none;
 }
 
 .step-img-box {
     width: 100%;
-    aspect-ratio: 1.4 / 1;
-    border-radius: 24px;
+    border-radius: 20px;
     overflow: hidden;
-    margin-bottom: 25px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
+    background: transparent !important;
+    position: relative;
+    /* transition for shadow if needed, but animation handles it */
 }
 
 .step-img-box img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
+    object-fit: contain;
     transition: transform 0.6s ease;
 }
 
-.step-card:hover .step-img-box img {
-    transform: scale(1.1);
-}
+
 
 .step-card h4 {
     font-size: 1.8rem;
@@ -960,17 +920,89 @@
 
 .step-card p {
     font-size: 1rem;
-    color: #777;
+    color: #666;
     font-weight: 500;
     word-break: keep-all;
+    line-height: 1.6;
+    padding: 0 10px;
 }
+
+/* Sequential Reveal for Step Cards */
+.cooking-steps-grid .step-card.reveal {
+    opacity: 0;
+    transform: translateX(-60px); /* 왼쪽에서 밀려 들어오는 느낌 */
+}
+
+.cooking-steps-grid .step-card.reveal.active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* 천천히 하나씩 튀어오르며 색상이 강조되는 효과 */
+@keyframes floatAndColor {
+    0% { 
+        transform: translateY(0); 
+        filter: brightness(1) saturate(1); 
+        box-shadow: none; 
+    }
+    12.5% { 
+        transform: translateY(var(--float-y)); /* 변수를 사용하여 높이 조절 */
+        filter: brightness(1.05) saturate(1.3); 
+        box-shadow: 0 40px 65px rgba(250, 166, 63, 0.22); 
+    }
+    25% { 
+        transform: translateY(0); 
+        filter: brightness(1) saturate(1); 
+        box-shadow: none; 
+    }
+    100% { 
+        transform: translateY(0); 
+    }
+}
+
+.cooking-steps-grid .step-card.reveal.active .step-img-box {
+    animation: floatAndColor 8s ease-in-out infinite;
+}
+
+/* 8초 사이클 동안 2초씩 순차적으로 동작 */
+.cooking-steps-grid .step-card.reveal.active:nth-child(1) { transition-delay: 0s; }
+.cooking-steps-grid .step-card.reveal.active:nth-child(1) .step-img-box { animation-delay: 0s; }
+
+.cooking-steps-grid .step-card.reveal.active:nth-child(2) { transition-delay: 0.2s; }
+.cooking-steps-grid .step-card.reveal.active:nth-child(2) .step-img-box { animation-delay: 2s; }
+
+.cooking-steps-grid .step-card.reveal.active:nth-child(3) { transition-delay: 0.4s; }
+.cooking-steps-grid .step-card.reveal.active:nth-child(3) .step-img-box { animation-delay: 4s; }
+
+.cooking-steps-grid .step-card.reveal.active:nth-child(4) { transition-delay: 0.6s; }
+.cooking-steps-grid .step-card.reveal.active:nth-child(4) .step-img-box { animation-delay: 6s; }
 
 /* Comparison Bar */
 .comparison-container {
     max-width: 1600px;
     /* Re-aligned with even larger image box */
-    margin: 80px auto 100px;
+    margin: 80px auto 10px;
     position: relative;
+}
+
+.comparison-bar-wrapper {
+    position: relative;
+    padding: 12px; /* Space for the outer border */
+}
+
+/* Decorative Outer Border Shape for the Comparison Bar */
+.comparison-bar-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1.5px solid rgba(250, 166, 63, 0.25);
+    border-radius: 60px; /* Outer pill shape */
+    pointer-events: none;
+    z-index: 0;
 }
 
 .comparison-bar {
@@ -1016,6 +1048,20 @@
     color: #999;
     margin-bottom: 12px;
     padding-left: 20px;
+}
+
+.cooking-system-grid-label {
+    margin-top: 30px !important;
+    margin-bottom: 45px !important;
+}
+
+@media screen and (max-width: 1024px) {
+    .cooking-system-grid-label {
+        margin-top: 60px !important;
+        margin-bottom: 20px !important;
+        padding-left: 0;
+        text-align: center;
+    }
 }
 
 .comparison-info-text {
@@ -1079,9 +1125,28 @@
 }
 
 .bar-item.muted {
-    color: #F26649;
-    opacity: 0.7;
+    background: #FDF1ED;
+    color: rgba(242, 102, 73, 0.6);
 }
+
+/* Sequential Reveal for Comparison Bar Items */
+.comparison-bar .bar-item.reveal {
+    transform: translateX(-30px);
+    opacity: 0;
+}
+
+.comparison-bar .bar-item.reveal.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.comparison-bar .bar-item.reveal.active:nth-child(1) { transition-delay: 0.1s; }
+.comparison-bar .bar-item.reveal.active:nth-child(2) { transition-delay: 0.25s; }
+.comparison-bar .bar-item.reveal.active:nth-child(3) { transition-delay: 0.4s; }
+/* Note: nth-child(4) is mobile-comparison-msg */
+.comparison-bar .bar-item.reveal.active:nth-child(5) { transition-delay: 0.55s; }
+.comparison-bar .bar-item.reveal.active:nth-child(6) { transition-delay: 0.7s; }
+.comparison-bar .bar-item.reveal.active:nth-child(7) { transition-delay: 0.85s; }
 
 .comparison-desc {
     margin-top: 30px;
@@ -1110,14 +1175,18 @@
 /* Bottom Icons */
 .efficiency-grid {
     background: #FAA63F;
-    /* Navigation dark color */
+    padding: 60px 0;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.efficiency-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 40px 5%;
     gap: 30px;
+    max-width: var(--container-width);
+    margin: 0 auto;
     width: 100%;
-    max-width: none;
-    margin-top: 100px;
 }
 
 .efficiency-item {
@@ -1132,8 +1201,23 @@
     color: #30221F;
     text-align: left;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Sequential Reveal for Efficiency Items */
+.efficiency-item.reveal {
+    transform: translateX(-30px);
+    opacity: 0;
+}
+
+.efficiency-item.reveal.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.efficiency-item.reveal.active:nth-child(1) { transition-delay: 0.2s; }
+.efficiency-item.reveal.active:nth-child(2) { transition-delay: 0.4s; }
+.efficiency-item.reveal.active:nth-child(3) { transition-delay: 0.6s; }
 
 .efficiency-item:hover {
     transform: translateY(-5px);
@@ -1158,6 +1242,19 @@
     font-weight: 800;
     margin-bottom: 6px;
     color: #30221F;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.eng-tag {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    opacity: 0.7;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-family: 'Outfit', sans-serif;
+    text-transform: uppercase;
 }
 
 .efficiency-text p {
@@ -1168,17 +1265,25 @@
 
 @media screen and (max-width: 1024px) {
     .cooking-steps-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; /* 위쪽 바와 어울리도록 적절한 간격 유지 */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        --float-y: -15px; /* 모바일에서는 상승 높이를 대폭 줄임 */
     }
 
-    .step-card:not(:last-child)::after {
-        top: auto;
-        bottom: -35px;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%) rotate(90deg);
-        width: 30px;
+    .step-card {
+        padding: 0 !important; /* 카드 여백 제거 */
+    }
+
+    .step-img-box {
+        padding: 0 !important; /* 이미지 박스 여백 제거 */
+        border-radius: 0 !important; /* 꽉 차게 보이기 위해 모서리 조정 */
+    }
+
+    .step-card::after {
+        display: none !important; /* 2x2 배열에서는 화살표 숨김 */
     }
 
     .efficiency-grid {
@@ -1188,7 +1293,53 @@
     }
 
     .efficiency-item {
-        padding: 30px;
+        display: block !important; /* 가로형에서 다시 블록형으로 변경 */
+        text-align: left !important;
+        padding: 30px 25px !important;
+        background: #fff;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    .efficiency-icon {
+        display: none !important; /* 아이콘 제거 */
+    }
+
+    .efficiency-text {
+        width: 100%;
+    }
+
+    .efficiency-text h5 {
+        margin-bottom: 12px !important;
+        font-size: 1.3rem !important; /* 타이틀 크기 살짝 키움 */
+        font-weight: 800 !important;
+        color: #30221F;
+        position: relative;
+        padding-left: 15px;
+        display: flex !important;
+        align-items: baseline !important;
+        gap: 8px !important;
+    }
+
+    /* 타이틀 왼쪽에 작은 포인트 바 추가 (아이콘 대신) */
+    .efficiency-text h5::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 18px;
+        background: var(--primary-color);
+        border-radius: 2px;
+    }
+
+    .efficiency-text p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        color: #555;
+        word-break: keep-all;
+        padding-left: 15px; /* 타이틀 라인과 맞춤 */
     }
 }
 
@@ -1249,6 +1400,14 @@
         gap: 2px;
     }
 
+    .comparison-bar-wrapper {
+        padding: 0;
+    }
+
+    .comparison-bar-wrapper::before {
+        display: none;
+    }
+
     .bar-item {
         flex: 1 1 calc(33.33% - 2px);
         height: 60px;
@@ -1293,16 +1452,30 @@
         font-size: 1.2rem;
     }
 
-    .bar-item:nth-child(1), .bar-item:nth-child(2), .bar-item:nth-child(3) { order: 1; }
-    .bar-item:nth-child(5), .bar-item:nth-child(6), .bar-item:nth-child(7) { order: 3; }
+    .bar-item:nth-child(1),
+    .bar-item:nth-child(2),
+    .bar-item:nth-child(3) {
+        order: 1;
+    }
+
+    .bar-item:nth-child(5),
+    .bar-item:nth-child(6),
+    .bar-item:nth-child(7) {
+        order: 3;
+    }
 
     .comparison-info-text {
         display: none;
     }
 
     .efficiency-grid {
+        padding: 40px 0;
+    }
+
+    .efficiency-container {
         grid-template-columns: 1fr;
-        text-align: center;
+        gap: 20px;
+        padding: 0 5%;
     }
 
     .efficiency-item {
