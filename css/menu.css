@@ -309,6 +309,7 @@
     line-height: 1.6;
     margin-bottom: 15px;
     font-weight: 600;
+    min-height: 3.2rem; /* Ensure consistent height for 2 lines */
 }
 
 .origin-badge {

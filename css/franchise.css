@@ -312,16 +312,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 35px 50px;
-    cursor: pointer;
+    padding: 35px 50px 10px;
     background: #FFF8EC;
     /* Warm cream background */
     transition: var(--transition);
 }
 
-.cost-accordion-header:hover {
-    background: #FFF3E0;
-}
+
 
 .cost-accordion-title-wrap {
     display: flex;
@@ -377,7 +374,7 @@
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 20px;
-    padding-top: 20px;
+    padding-top: 0;
 }
 
 .cost-standard {
@@ -403,6 +400,8 @@
 .table-responsive {
     overflow-x: auto;
 }
+
+
 
 /* Table Zoom Modal (Mobile Only) */
 @media screen and (max-width: 768px) {
@@ -500,87 +499,12 @@
     }
 }
 
-.cost-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.cost-table th {
-    background-color: #F5EDD8;
-    /* Header background color */
-    padding: 25px 30px;
-    text-align: center;
-    font-size: 1.05rem;
-    color: #30221F;
-    border-bottom: 2px solid #30221F;
-    vertical-align: middle;
-}
-
-.cost-table td {
-    padding: 28px 30px;
-    border-bottom: 1px solid #eee;
-    font-size: 1.05rem;
-    color: #555;
-    vertical-align: middle;
-    text-align: center;
-}
-
-.cost-table th:nth-child(1),
-.cost-table td:nth-child(1) {
-    width: 25%;
-}
-
-.cost-table th:nth-child(2),
-.cost-table td:nth-child(2) {
-    width: 25%;
-}
-
-.cost-table th:nth-child(1),
-.cost-table td:nth-child(1) {
-    width: 30%;
-}
-
-.cost-table th:nth-child(2),
-.cost-table td:nth-child(2) {
-    width: 30%;
-}
-
-.cost-table th:nth-child(3),
-.cost-table td:nth-child(3) {
-    width: 40%;
-}
-
-.total-row td:nth-child(3) {
-    text-align: center;
-}
-
-
-.cost-table .strike {
-    text-decoration: line-through;
-    color: #999;
-    margin-right: 10px;
-}
-
-.cost-table .accent {
-    color: #999;
-    font-weight: 600;
-}
-
-.total-row {
-    background-color: #F5EDD8;
-}
-
-.total-row td {
-    font-weight: 700 !important;
-    font-size: 1.2rem;
-    color: #30221F !important;
-    border-top: 2px solid #30221F;
-    border-bottom: 2px solid #30221F;
-}
-
+.cost-table,
+.cost-table th,
+.cost-table td,
+.total-row,
 .total-accent {
-    color: #F26649 !important;
-    font-size: 1.4rem !important;
+    display: none;
 }
 
 .cost-note {
@@ -589,6 +513,13 @@
     text-align: left;
     margin-top: 15px;
     line-height: 1.6;
+}
+
+.cost-img-full {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
 }
 
 @media (max-width: 768px) {
@@ -759,21 +690,10 @@
     width: 100%;
     aspect-ratio: 1380 / 690;
     margin-top: 60px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-auto-flow: column;
 }
 
 .process-mobile-img {
     display: none;
-}
-
-.hover-detector {
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    cursor: default;
 }
 
 .step-wrapper {
@@ -782,74 +702,46 @@
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-        opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    pointer-events: none;
-    /* Let clicks pass to detectors */
-    z-index: 1;
-}
-
-.process-section.active .step-wrapper {
+    /* Visible by default in grayscale */
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .process-step-layer {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-        filter 0.3s ease;
     cursor: default;
+    filter: grayscale(100%) brightness(0.9);
 }
 
-/* Hover Detection Logic - Targets the inner layer without delay */
-.d-1:hover~.step-1 .process-step-layer,
-.d-2:hover~.step-2 .process-step-layer,
-.d-3:hover~.step-3 .process-step-layer,
-.d-4:hover~.step-4 .process-step-layer,
-.d-5:hover~.step-5 .process-step-layer,
-.d-6:hover~.step-6 .process-step-layer,
-.d-7:hover~.step-7 .process-step-layer,
-.d-8:hover~.step-8 .process-step-layer {
-    transform: translateY(-12px) scale(1.03);
-    filter: brightness(1.08);
+/* Spotlight Loop Animation (Only one step color at a time) */
+@keyframes spotlightLoop {
+    0% { filter: grayscale(0%) brightness(1); }
+    12.5% { filter: grayscale(0%) brightness(1); } /* 2.5s out of 20s */
+    15%, 100% { filter: grayscale(100%) brightness(0.9); }
 }
 
-/* Sequential entry delays (Applies only to wrappers) */
-.step-1 {
-    transition-delay: 0.1s;
+/* Apply Animation when section is active */
+.process-section.active .step-wrapper .process-step-layer {
+    animation: spotlightLoop 20s infinite;
 }
 
-.step-2 {
-    transition-delay: 0.3s;
+.process-section.active .step-0 .process-step-layer {
+    filter: grayscale(0%) brightness(1); /* The background bar stays color */
 }
 
-.step-3 {
-    transition-delay: 0.5s;
-}
-
-.step-4 {
-    transition-delay: 0.7s;
-}
-
-.step-5 {
-    transition-delay: 0.9s;
-}
-
-.step-6 {
-    transition-delay: 1.1s;
-}
-
-.step-7 {
-    transition-delay: 1.3s;
-}
-
-.step-8 {
-    transition-delay: 1.5s;
-}
+/* 2.5s Interval Staggered Delays (Spotlight sequence) */
+.process-section.active .step-1 .process-step-layer { animation-delay: 0s; }
+.process-section.active .step-2 .process-step-layer { animation-delay: 2.5s; }
+.process-section.active .step-3 .process-step-layer { animation-delay: 5.0s; }
+.process-section.active .step-4 .process-step-layer { animation-delay: 7.5s; }
+.process-section.active .step-5 .process-step-layer { animation-delay: 10.0s; }
+.process-section.active .step-6 .process-step-layer { animation-delay: 12.5s; }
+.process-section.active .step-7 .process-step-layer { animation-delay: 15.0s; }
+.process-section.active .step-8 .process-step-layer { animation-delay: 17.5s; }
 
 /* Mobile Adjustment */
 @media screen and (max-width: 768px) {

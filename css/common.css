@@ -366,52 +366,7 @@ header.scrolled .logo img {
     transform: translateY(-8.5px) rotate(-45deg);
 }
 
-.ticker-bar {
-    width: 100%;
-    height: 50px;
-    background: #30221F;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
 
-.ticker-track {
-    display: flex;
-    white-space: nowrap;
-    animation: ticker-infinite 40s linear infinite;
-}
-
-.ticker-track span {
-    color: #F5EDD8;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 0 30px;
-    display: flex;
-    align-items: center;
-}
-
-.ticker-track .dot {
-    color: var(--primary-color);
-    font-size: 18px;
-    padding: 0;
-}
-
-@keyframes ticker-infinite {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-33.333%);
-    }
-}
-
-@media (max-width: 768px) {
-    .ticker-bar {
-        height: 45px;
-    }
-}
 
 .floating-banners {
     position: fixed;

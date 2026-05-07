@@ -1,3 +1,10 @@
+/* Store Page Hero Section */
+.store-hero {
+    background-image: url('../Image/매장찾기_대문.webp');
+    background-size: cover;
+    background-position: center 15%;
+}
+
 .store-search {
     background: #f9f9f9;
     padding: 20px;
