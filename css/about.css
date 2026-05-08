@@ -998,8 +998,8 @@
 }
 
 .cooking-system-grid-label {
-    margin-top: 10px !important; /* 간격 대폭 축소 */
-    margin-bottom: 15px !important;
+    margin-top: 230px !important; 
+    margin-bottom: 30px !important;
 }
 
 @media screen and (max-width: 1024px) {
