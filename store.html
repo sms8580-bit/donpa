@@ -10,7 +10,7 @@
     <link rel="icon" href="Image/파비콘.svg" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- Naver Maps API -->
-    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=tmkb3fbqbg"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=tmkb3fbqbg&v=20260508"></script>
 </head>
 
 <body>
@@ -267,6 +267,14 @@
 
     <script src="js/common.js"></script>
     <script>
+        const storeCards = document.querySelectorAll('.store-card');
+        const storePhoto = document.getElementById('store-photo');
+        const photoContainer = document.querySelector('.store-photo-container');
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const closeModal = document.querySelector('.close-modal');
+        const searchInput = document.getElementById('store-search-input');
+
         // Naver Map Initialization
         const defaultLat = 35.8329;
         const defaultLng = 128.7562;
