@@ -301,7 +301,7 @@
 .cost-accordion {
     max-width: var(--container-width);
     margin: 0 auto;
-    background: #FFF8EC;
+    background: #ffffff;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -313,7 +313,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 35px 50px 10px;
-    background: #FFF8EC;
+    background: #ffffff;
     /* Warm cream background */
     transition: var(--transition);
 }
@@ -366,6 +366,7 @@
     max-height: 1500px;
     opacity: 1;
     padding: 0 50px 50px;
+    background: #ffffff;
 }
 
 /* Inner Table Content Styling */
@@ -379,12 +380,12 @@
 
 .cost-standard {
     font-size: 1rem;
-    color: #666;
-    font-weight: 500;
-    background: #fdfdfd;
-    padding: 6px 15px;
+    color: #ffffff; /* 가독성을 위해 흰색으로 변경 */
+    font-weight: 700;
+    background: #FAA63F; /* 요청하신 브랜드 색상 */
+    padding: 8px 20px;
     border-radius: 100px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: none;
 }
 
 .cost-zoom-guide {
@@ -483,8 +484,8 @@
 
     #modal-table-container .cost-standard {
         font-size: 1.1rem;
-        color: #30221F;
-        background: #F5EDD8;
+        color: #ffffff;
+        background: #FAA63F;
     }
 
     #modal-table-container .cost-note {
@@ -674,74 +675,43 @@
     overflow: hidden;
 }
 
-.process-side-desc-inline {
-    display: inline-block;
+.origin-header.centered {
+    text-align: center;
+}
+
+.origin-header.centered .origin-subtitle {
+    margin-bottom: 10px;
+}
+
+.process-side-desc {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #666;
-    margin-left: 30px;
+    margin-top: 5px; /* 간격 축소 */
     font-weight: 500;
-    vertical-align: middle;
-    letter-spacing: 0;
+    line-height: 1.5; /* 행간 축소 */
+    word-break: keep-all;
 }
 
 .process-layers-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 1380 / 690;
     margin-top: 60px;
+}
+
+.process-pc-img {
+    display: block;
+    width: 100%;
+    max-width: 1200px; /* 세로폭을 줄이기 위해 최대 너비 제한 */
+    height: auto;
+    margin: 0 auto; /* 중앙 정렬 */
 }
 
 .process-mobile-img {
     display: none;
 }
 
-.step-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Visible by default in grayscale */
-    opacity: 1;
-    transform: none;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.process-step-layer {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    cursor: default;
-    filter: grayscale(100%) brightness(0.9);
-}
-
-/* Spotlight Loop Animation (Only one step color at a time) */
-@keyframes spotlightLoop {
-    0% { filter: grayscale(0%) brightness(1); }
-    12.5% { filter: grayscale(0%) brightness(1); } /* 2.5s out of 20s */
-    15%, 100% { filter: grayscale(100%) brightness(0.9); }
-}
-
-/* Apply Animation when section is active */
-.process-section.active .step-wrapper .process-step-layer {
-    animation: spotlightLoop 20s infinite;
-}
-
-.process-section.active .step-0 .process-step-layer {
-    filter: grayscale(0%) brightness(1); /* The background bar stays color */
-}
-
-/* 2.5s Interval Staggered Delays (Spotlight sequence) */
-.process-section.active .step-1 .process-step-layer { animation-delay: 0s; }
-.process-section.active .step-2 .process-step-layer { animation-delay: 2.5s; }
-.process-section.active .step-3 .process-step-layer { animation-delay: 5.0s; }
-.process-section.active .step-4 .process-step-layer { animation-delay: 7.5s; }
-.process-section.active .step-5 .process-step-layer { animation-delay: 10.0s; }
-.process-section.active .step-6 .process-step-layer { animation-delay: 12.5s; }
-.process-section.active .step-7 .process-step-layer { animation-delay: 15.0s; }
-.process-section.active .step-8 .process-step-layer { animation-delay: 17.5s; }
+/* Removed multi-layer animation styles as requested */
 
 /* Mobile Adjustment */
 @media screen and (max-width: 768px) {
@@ -753,12 +723,8 @@
         display: none;
     }
 
-    .process-layers-container {
-        display: block !important;
-        aspect-ratio: auto !important;
-        height: auto !important;
-        margin-top: 40px !important;
-        padding: 0 !important;
+    .process-pc-img {
+        display: none !important;
     }
 
     .process-mobile-img {
@@ -771,7 +737,8 @@
     }
 
     .hover-detector,
-    .step-wrapper {
+    .step-wrapper,
+    .process-step-layer {
         display: none !important;
     }
 
@@ -779,12 +746,13 @@
         padding: 60px 0 !important;
     }
 
-    .process-side-desc-inline {
+    .process-side-desc {
         display: block !important;
-        font-size: 0.9rem !important;
+        font-size: 0.95rem !important;
         margin-left: 0 !important;
-        margin-top: 10px !important;
+        margin-top: 15px !important;
         text-align: center;
+        padding: 0 20px;
     }
 }
 

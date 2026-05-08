@@ -682,3 +682,16 @@
         display: block;
     }
 }
+
+/* Specific Hero Image Positioning for Menu Page */
+.sub-hero {
+    background-position: center 90% !important;
+}
+
+@media screen and (max-width: 1024px) {
+    .sub-hero {
+        background-position: center 80% !important;
+    }
+}
+
+
