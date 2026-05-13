@@ -583,7 +583,9 @@
         width: 100%;
         height: auto;
         display: block;
-        border-radius: 20px;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
     }
 
     .origin-item {

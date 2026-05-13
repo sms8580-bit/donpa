@@ -325,14 +325,7 @@
         </div>
     </footer>
 
-    <!-- Table Zoom Modal (Mobile Only) -->
-    <div id="table-modal" class="table-modal">
-        <div class="table-modal-close"><i class="ri-close-line"></i></div>
-        <div class="table-modal-content">
-            <div id="modal-table-container"></div>
-        </div>
-        <div class="table-modal-hint">손가락으로 밀어서 내용을 확인하세요</div>
-    </div>
+
 
     <script src="js/common.js"></script>
     <script>
@@ -362,45 +355,6 @@
         });
 
 
-
-        // Table Zoom Logic (Mobile Only)
-        const tableModal = document.getElementById('table-modal');
-        const tableClose = document.querySelector('.table-modal-close');
-        const tableTrigger = document.querySelector('.table-responsive');
-        const modalContainer = document.getElementById('modal-table-container');
-
-        if (tableTrigger && window.innerWidth <= 768) {
-            tableTrigger.addEventListener('click', () => {
-                const contentClone = document.querySelector('.cost-accordion-content').cloneNode(true);
-
-                // 모달 안에서는 개별 스크롤 대신 전체가 보이도록 스타일 조정
-                contentClone.style.maxHeight = 'none';
-                contentClone.style.opacity = '1';
-                contentClone.style.display = 'block';
-                contentClone.style.padding = '20px';
-
-                modalContainer.innerHTML = '';
-                modalContainer.appendChild(contentClone);
-                tableModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
-
-        if (tableClose) {
-            tableClose.addEventListener('click', () => {
-                tableModal.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        }
-
-        // 닫기 버튼 외 배경 클릭 시에도 닫기
-        tableModal.addEventListener('click', (e) => {
-            if (e.target === tableModal) {
-                tableModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
         // Google Sheets Form Submit Logic
         const form = document.getElementById('gform');
         const submitBtn = document.getElementById('submit-btn');
@@ -410,7 +364,7 @@
 
         form.addEventListener('submit', e => {
             e.preventDefault();
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbyT8qoaqCijifaDMJxpbDEM6dt1MOXCDTjXczHUYr1gCoUBoEpUVPb7Eq653xS8jiAk/exec';
+            const scriptURL = 'https://script.google.com/macros/s/AKfycby1rENeMU9JFzA3NyqRki-GBJWbkCl1W6kiU58g5kN1csgm89erGzXIl-7_dhlcRxNsLQ/exec';
 
             // UI 변경 (로딩 중 표시)
             btnText.style.opacity = '0';
