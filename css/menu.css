@@ -9,7 +9,7 @@
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
     cursor: pointer;
     background: #30221F;
@@ -17,7 +17,7 @@
 
 .menu-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .menu-img {
@@ -115,7 +115,7 @@
 
     margin-bottom: 40px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(44, 32, 22, 0.1);
+    border-bottom: 1px solid rgba(48, 34, 31, 0.15);
 
 }
 
@@ -141,30 +141,18 @@
     display: none;
 }
 
-.filter-indicator {
-    position: absolute;
-    bottom: -1px;
 
-    left: 0;
-    width: 1px;
-    height: 0;
 
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), width 0.4s;
-    pointer-events: none;
-    z-index: 10;
+.menu-section {
+    background-color: #ffffff;
 }
 
-.filter-indicator::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 18px solid transparent;
+.menu-section .section-header.left-align h2 {
+    color: #30221F;
+}
 
-    border-right: 18px solid transparent;
-    border-bottom: 18px solid var(--bg-color);
-
+.menu-section .takeout-badge {
+    color: #30221F;
 }
 
 .filter-btn {
@@ -226,7 +214,7 @@
 
 .takeout-badge {
     font-size: 1.1rem;
-    color: #8D7B68;
+    color: #8C7872;
     font-weight: 500;
     opacity: 0.8;
 }
@@ -234,14 +222,14 @@
 
 
 .origin-section {
-    background-color: #F2E2C4;
+    background-color: var(--bg-color);
     /* Match FAQ section theme */
     color: #30221F;
     padding: 100px 5%;
 }
 
 .origin-header .origin-title {
-    color: #30221F;
+    color: #ffffff;
 }
 
 .origin-grid {
@@ -524,7 +512,7 @@
     }
 
     .menu-info h3 {
-        color: #333 !important;
+        color: #30221F !important;
         margin-bottom: 0 !important;
         font-size: 1.4rem !important;
         /* 확실하게 확대 */
@@ -619,7 +607,7 @@
         /* 행간 완벽 압축 */
         height: auto !important;
         display: block !important;
-        color: #333 !important;
+        color: #ffffff !important;
         font-weight: 700 !important;
     }
 
@@ -627,7 +615,7 @@
         font-size: 0.75rem !important;
         line-height: 1.5 !important;
         /* 행간 완벽 압축 */
-        color: #777 !important;
+        color: #E5DDD0 !important;
         margin: 0 !important;
         /* 마진 완벽 제거 */
         word-break: keep-all !important;

@@ -1,18 +1,22 @@
+body {
+    background-color: #ffffff;
+}
+
 /* Store Page Hero Section */
 .store-hero {
-    background-image: url('../Image/매장찾기_대문.webp');
+    background-image: url('../Image/store_hero.webp');
     background-size: cover;
     background-position: center 15%;
 }
 
 .store-search {
-    background: #f9f9f9;
+    background: #30221F;
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 20px;
     display: flex;
     gap: 15px;
-    border: 1px solid #eee;
+    border: 1px solid #30221F;
 }
 
 .store-search input {
@@ -20,15 +24,16 @@
     padding: 15px 25px;
     border-radius: 30px;
     border: 1px solid #eee;
-    background: #f9f9f9;
+    background: #ffffff;
     font-size: 1rem;
+    color: #151414;
     transition: var(--transition);
 }
 
 .store-search input:focus {
     outline: none;
     border-color: var(--primary-color);
-    background: #fff;
+    background: #ffffff;
 }
 
 .store-list-container {
@@ -70,12 +75,12 @@
 }
 
 .store-items::-webkit-scrollbar-thumb {
-    background: #e0d5c1;
+    background: #30221F;
     border-radius: 12px;
 }
 
 .store-items::-webkit-scrollbar-thumb:hover {
-    background-color: var(--primary-color);
+    background-color: #30221F;
 }
 
 .store-card {
@@ -93,7 +98,7 @@
 
 .store-card:hover,
 .store-card.selected {
-    border-color: var(--primary-color);
+    border-color: #30221F;
     background: #fff;
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(181, 153, 110, 0.15);
@@ -102,13 +107,13 @@
 .store-card h4 {
     margin-bottom: 8px;
     font-size: 1.25rem;
-    color: var(--text-color);
+    color: #30221F;
     font-weight: 700;
 }
 
 .store-card p {
     font-size: 0.95rem;
-    color: var(--text-muted);
+    color: #30221F;
     margin-bottom: 6px;
     display: flex;
     align-items: center;
@@ -116,7 +121,7 @@
 }
 
 .store-card p i {
-    color: var(--primary-color);
+    color: #30221F;
     font-size: 1.1rem;
 }
 
@@ -221,7 +226,7 @@
     }
 
     .store-items::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.1) !important;
+        background: #30221F !important;
         border-radius: 10px !important;
     }
 
@@ -340,4 +345,8 @@
         right: 10px;
         background: rgba(0, 0, 0, 0.3);
     }
+}
+
+.section-header.left-align h2 {
+    color: #151414;
 }

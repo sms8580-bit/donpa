@@ -72,7 +72,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #F26649;
+    color: #faa63f;
     font-size: 1.5rem;
 }
 
@@ -240,7 +240,8 @@
 /* Franchise Cost Section */
 .franchise-cost {
     padding: 60px 5% 100px;
-    background-color: #F5EDD8;
+    background-color: #ffffff;
+    border-bottom: none !important;
 }
 
 .cost-intro {
@@ -313,7 +314,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 35px 50px 10px;
-    background: #ffffff;
+    background: #F1F1F1;
     /* Warm cream background */
     transition: var(--transition);
 }
@@ -339,7 +340,7 @@
     content: '';
     width: 6px;
     height: 24px;
-    background: #F26649;
+    background: #30221F;
     border-radius: 3px;
 }
 
@@ -366,7 +367,7 @@
     max-height: 1500px;
     opacity: 1;
     padding: 0 50px 50px;
-    background: #ffffff;
+    background: #F1F1F1;
 }
 
 /* Inner Table Content Styling */
@@ -380,9 +381,11 @@
 
 .cost-standard {
     font-size: 1rem;
-    color: #ffffff; /* 가독성을 위해 흰색으로 변경 */
+    color: #ffffff;
+    /* 가독성을 위해 흰색으로 변경 */
     font-weight: 700;
-    background: #FAA63F; /* 요청하신 브랜드 색상 */
+    background: #30221F;
+    /* 요청하신 브랜드 색상 */
     padding: 8px 20px;
     border-radius: 100px;
     border: none;
@@ -531,7 +534,9 @@
 
 .faq-section {
     padding: 100px 5%;
-    background-color: #F2E2C4;
+    background-color: #F1F1F1;
+    border-top: none !important;
+    margin-top: -1px;
 }
 
 .faq-list {
@@ -567,7 +572,7 @@
 
 .faq-icon {
     font-size: 1.5rem;
-    color: #F26649;
+    color: #FAA63F;
     transition: transform 0.4s ease;
 }
 
@@ -672,6 +677,7 @@
 /* Process Section Layout (Updated to static image) */
 .process-section {
     padding: 120px 0 100px;
+    background-color: #ffffff;
     overflow: hidden;
 }
 
@@ -687,9 +693,11 @@
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1.15rem;
     color: #666;
-    margin-top: 5px; /* 간격 축소 */
+    margin-top: 5px;
+    /* 간격 축소 */
     font-weight: 500;
-    line-height: 1.5; /* 행간 축소 */
+    line-height: 1.5;
+    /* 행간 축소 */
     word-break: keep-all;
 }
 
@@ -702,9 +710,11 @@
 .process-pc-img {
     display: block;
     width: 100%;
-    max-width: 1200px; /* 세로폭을 줄이기 위해 최대 너비 제한 */
+    max-width: 1200px;
+    /* 세로폭을 줄이기 위해 최대 너비 제한 */
     height: auto;
-    margin: 0 auto; /* 중앙 정렬 */
+    margin: 0 auto;
+    /* 중앙 정렬 */
 }
 
 .process-mobile-img {

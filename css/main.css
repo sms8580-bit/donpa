@@ -148,7 +148,9 @@
 }
 
 .section-menu-slider {
+    padding-top: 80px;
     padding-bottom: 80px;
+    background: #F1F1F1;
     overflow: hidden;
 }
 
@@ -180,12 +182,12 @@
 
 .menu-slider-wrap::before {
     left: 0;
-    background: linear-gradient(to right, var(--bg-color), transparent);
+    background: linear-gradient(to right, #F1F1F1, transparent);
 }
 
 .menu-slider-wrap::after {
     right: 0;
-    background: linear-gradient(to left, var(--bg-color), transparent);
+    background: linear-gradient(to left, #F1F1F1, transparent);
 }
 
 .menu-slider-track {
@@ -326,13 +328,13 @@
 
 /* 메인 WHY US: 브랜드 톤앤매너(Orange/Brown) 반영 */
 .section-features {
-    background: #F5EDD8;
+    background: #ffffff;
     /* Warm ivory bg */
     padding: 120px 0;
 }
 
 .section-features .origin-title {
-    color: #30221F;
+    color: #151414;
 }
 
 .section-features .process-item {

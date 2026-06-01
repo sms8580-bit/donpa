@@ -13,17 +13,17 @@
     /* Main 1 */
     --primary-hover: #F26649;
     /* Sub 1 as hover */
-    --bg-color: #F5EDD8;
+    --bg-color: #30221F;
 
-    --text-color: #30221F;
+    --text-color: #FFFFFF;
     /* Main 2 */
 
     --text-muted: #F26649;
     /* Sub 1 */
     --white: #FFFFFF;
     /* Sub 2 */
-    --glass-bg: rgba(255, 255, 255, 0.8);
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --glass-bg: rgba(48, 34, 31, 0.8);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
     --section-padding: 100px 5%;
     --container-width: 1500px;
@@ -408,7 +408,7 @@ header.scrolled .logo img {
 
 .banner-yellow {
     background: #F2E2C4;
-    color: var(--text-color);
+    color: #30221F;
 }
 
 .floating-banner img {
@@ -417,7 +417,7 @@ header.scrolled .logo img {
 }
 
 footer {
-    background: #30221F;
+    background: #151414;
     color: var(--white);
     padding: 80px 5% 60px;
     font-size: 14px;
@@ -436,7 +436,7 @@ footer {
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 25px;
-    color: var(--primary-color);
+    color: #ffffff;
     letter-spacing: 0.5px;
 }
 
@@ -452,7 +452,8 @@ footer {
 
 .footer-brand .footer-copyright {
     font-size: 13px;
-    opacity: 0.7;
+    color: #ffffff;
+    opacity: 1;
     margin-bottom: 15px;
 }
 
@@ -464,7 +465,8 @@ footer {
 }
 
 .footer-brand-links a {
-    opacity: 0.8;
+    color: #ffffff;
+    opacity: 1;
 }
 
 .footer-brand-links a.bold {
@@ -479,11 +481,11 @@ footer {
 .footer-info-list li {
     margin-bottom: 12px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
 }
 
 .footer-info-list li strong {
-    color: var(--white);
+    color: #ffffff;
     display: block;
     margin-bottom: 3px;
     font-size: 1.1rem;
@@ -527,13 +529,14 @@ footer {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
-    opacity: 0.7;
+    color: #ffffff;
+    opacity: 1;
     transition: var(--transition);
 }
 
 .footer-social-links a:hover {
     opacity: 1;
-    color: var(--primary-color);
+    color: #ffffff;
 }
 
 @media screen and (max-width: 1200px) {
@@ -674,7 +677,8 @@ footer {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 130px 5% 80px; /* 헤더 높이만큼 상단 패딩 추가 */
+    padding: 130px 5% 80px;
+    /* 헤더 높이만큼 상단 패딩 추가 */
     overflow: hidden;
     color: var(--white);
     background-size: cover;
@@ -688,7 +692,8 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* 오버레이 농도 최적화 */
+    background: rgba(0, 0, 0, 0.6);
+    /* 오버레이 농도 최적화 */
     z-index: 1;
 }
 
@@ -925,7 +930,7 @@ footer {
 .process-section {
     padding: 120px 5%;
     width: 100%;
-    background-color: #F5EDD8;
+    background-color: var(--bg-color);
     text-align: center;
 }
 
@@ -986,7 +991,7 @@ footer {
 
 .subtitle {
     display: inline-block;
-    color: #F26649;
+    color: #FAA63F;
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -1046,7 +1051,7 @@ footer {
 
 .origin-subtitle {
     display: inline-block;
-    color: #F26649;
+    color: #FAA63F;
     /* Sub 1 */
     font-size: 0.9rem;
     font-weight: 700;
@@ -1063,7 +1068,7 @@ footer {
     transform: translateY(-50%);
     width: 20px;
     height: 2px;
-    background-color: #F26649;
+    background-color: #FAA63F;
     /* Sub 1 */
 }
 
@@ -1074,7 +1079,7 @@ footer {
 
 /* [WHY US, MENU GALLERY 등] 밝은 배경 섹션의 타이틀 컬러 */
 .origin-title {
-    color: #30221F;
+    color: #151414;
 }
 
 /* [원산지] 어두운 배경 섹션의 타이틀 컬러 (배경이 30221F 인 곳) */
@@ -1115,9 +1120,11 @@ footer {
     flex-wrap: nowrap;
     width: max-content;
     gap: 80px;
-    animation: scroll-left 60s linear infinite !important; /* 강제 실행 */
+    animation: scroll-left 60s linear infinite !important;
+    /* 강제 실행 */
     will-change: transform;
-    transform: translateZ(0); /* GPU 가속 */
+    transform: translateZ(0);
+    /* GPU 가속 */
 }
 
 .scroll-item {
@@ -1126,7 +1133,8 @@ footer {
     color: #FFFFFF;
     font-size: 1.0rem;
     font-weight: 600;
-    padding: 0; /* 패딩 제거 후 부모의 gap으로 간격 조절 */
+    padding: 0;
+    /* 패딩 제거 후 부모의 gap으로 간격 조절 */
 }
 
 .scroll-item::before {
@@ -1141,6 +1149,7 @@ footer {
     0% {
         transform: translate3d(0, 0, 0);
     }
+
     100% {
         transform: translate3d(-50%, 0, 0);
     }
@@ -1335,7 +1344,8 @@ footer {
         padding: 12px 15px;
         justify-content: center !important;
         position: fixed !important;
-        top: 35px !important; /* 상단 바 높이만큼 유지 */
+        top: 35px !important;
+        /* 상단 바 높이만큼 유지 */
     }
 
     .logo {
