@@ -93,7 +93,7 @@
             <div class="container reveal">
                 <div class="brand-section">
                     <div class="brand-text">
-                        <div class="subtitle" style="margin-bottom: 20px;">OUR BRAND</div>
+                        <div class="subtitle">OUR BRAND</div>
                         <h2 class="brand-title">
                             돈까스 <em>돈빠면,</em> <span>충분해</span>
                         </h2>
@@ -326,6 +326,42 @@
     </footer>
 
     <script src="js/common.js"></script>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="modal modal-image">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-img" style="max-width: 90%; height: auto;">
+    </div>
+
+    <script>
+        // 6단계 조리과정 이미지 클릭 시 크게 보기 (전체 해상도 공통)
+        const arrowImg = document.querySelector('.comparison-arrow-img');
+        const imgModal = document.getElementById('image-modal');
+        const imgModalImg = document.getElementById('modal-img');
+        const imgModalClose = imgModal.querySelector('.close-modal');
+
+        if (arrowImg && imgModal && imgModalImg) {
+            arrowImg.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    imgModalImg.src = arrowImg.src;
+                    imgModal.classList.add('show');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+
+            imgModalClose.addEventListener('click', () => {
+                imgModal.classList.remove('show');
+                document.body.style.overflow = '';
+            });
+
+            imgModal.addEventListener('click', (e) => {
+                if (e.target === imgModal) {
+                    imgModal.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

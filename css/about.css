@@ -675,6 +675,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    .cooking-system-section .subtitle {
+        margin-bottom: 6px !important;
+    }
+
     .brand-title {
         font-size: 2rem;
         line-height: 1.3;
@@ -804,6 +808,12 @@
     }
 }
 
+/* PC Subtitle Margins */
+.brand-text .subtitle,
+.section-title-wrap .subtitle {
+    margin-bottom: 0px !important;
+}
+
 /* Cooking System Section */
 .cooking-system-section {
     padding: 120px 0 0;
@@ -833,7 +843,7 @@
     color: #FAA63F;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin: 0 auto 25px;
+    margin: 0 auto 0;
     width: fit-content;
 }
 
@@ -855,17 +865,6 @@
     color: #FAA63F;
     position: relative;
     display: inline-block;
-}
-
-.cooking-system-title span::after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    width: 100%;
-    height: 12px;
-    background: rgba(250, 166, 63, 0.55);
-    z-index: -1;
 }
 
 .cooking-system-subtitle-box {
@@ -999,13 +998,10 @@
 }
 
 .comparison-arrow-img {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
     width: 100%;
     height: auto;
-    pointer-events: none;
-    z-index: 10;
+    margin: 0 auto;
 }
 
 .process-side-desc {
@@ -1019,13 +1015,13 @@
     font-size: 1rem;
     font-weight: 800;
     color: #555555;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
     /* 간격 좁힘 */
 }
 
 .cooking-system-grid-label {
-    margin-top: 230px !important;
-    margin-bottom: 30px !important;
+    margin-top: 60px !important;
+    margin-bottom: 20px !important;
 }
 
 @media screen and (max-width: 1024px) {
@@ -1420,5 +1416,9 @@
     .history-body {
         text-align: center;
         word-break: keep-all;
+    }
+
+    .comparison-arrow-img {
+        cursor: pointer;
     }
 }
