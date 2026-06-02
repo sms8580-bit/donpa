@@ -417,7 +417,7 @@ header.scrolled .logo img {
 }
 
 footer {
-    background: #151414;
+    background: #30221F;
     color: var(--white);
     padding: 80px 5% 60px;
     font-size: 14px;
@@ -1531,7 +1531,7 @@ footer {
 
 .modal-body {
     line-height: 1.8;
-    color: var(--text-color);
+    color: #151414;
     font-weight: 500;
     /* 본문 두께 높임 */
 }

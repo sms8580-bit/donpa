@@ -3,7 +3,7 @@
 }
 
 .our-brand-section {
-    background-color: #ffffff;
+    background-color: #F5EDD8;
 }
 
 .our-brand-section .brand-title {
@@ -126,7 +126,7 @@
 
 .history-section {
     padding: 120px 5%;
-    background-color: #F1F1F1;
+    background-color: #F5EDD8;
     /* FAQ theme color */
 }
 
@@ -808,8 +808,7 @@
 .cooking-system-section {
     padding: 120px 0 0;
     /* Bottom padding removed as efficiency-grid will fill it */
-    background-color: var(--bg-color);
-    /* Reverted to original ivory */
+    background-color: #F1F1F1;
     text-align: center;
 }
 
@@ -848,7 +847,7 @@
 .cooking-system-title {
     font-size: 3.5rem;
     font-weight: 100;
-    color: #ffffff;
+    color: #151414;
     margin-bottom: 30px;
 }
 
@@ -936,13 +935,13 @@
 .step-card h4 {
     font-size: 1.8rem;
     font-weight: 900;
-    color: #ffffff;
+    color: #151414;
     margin-bottom: 10px;
 }
 
 .step-card p {
     font-size: 1rem;
-    color: #E5DDD0;
+    color: #555555;
     font-weight: 500;
     word-break: keep-all;
     line-height: 1.6;
@@ -1019,7 +1018,7 @@
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #555555;
     margin-bottom: 8px;
     /* 간격 좁힘 */
 }
@@ -1054,7 +1053,7 @@
 
 /* Bottom Icons */
 .efficiency-grid {
-    background: #151414;
+    background: #F1F1F1;
     padding: 60px 0;
     width: 100%;
     margin-top: 100px;

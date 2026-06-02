@@ -240,7 +240,7 @@
 /* Franchise Cost Section */
 .franchise-cost {
     padding: 60px 5% 100px;
-    background-color: #ffffff;
+    background-color: #F5EDD7;
     border-bottom: none !important;
 }
 
@@ -314,7 +314,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 35px 50px 10px;
-    background: #F1F1F1;
+    background: #FFFFFF;
     /* Warm cream background */
     transition: var(--transition);
 }
@@ -340,7 +340,7 @@
     content: '';
     width: 6px;
     height: 24px;
-    background: #30221F;
+    background: #F26649;
     border-radius: 3px;
 }
 
@@ -367,7 +367,7 @@
     max-height: 1500px;
     opacity: 1;
     padding: 0 50px 50px;
-    background: #F1F1F1;
+    background: #ffffff;
 }
 
 /* Inner Table Content Styling */
@@ -384,7 +384,7 @@
     color: #ffffff;
     /* 가독성을 위해 흰색으로 변경 */
     font-weight: 700;
-    background: #30221F;
+    background: #FAA63F;
     /* 요청하신 브랜드 색상 */
     padding: 8px 20px;
     border-radius: 100px;
@@ -677,7 +677,7 @@
 /* Process Section Layout (Updated to static image) */
 .process-section {
     padding: 120px 0 100px;
-    background-color: #ffffff;
+    background-color: #F5EDD7;
     overflow: hidden;
 }
 
@@ -897,5 +897,9 @@
     .contact-form-card .form-desc,
     .contact-form-card h3 {
         display: none !important;
+    }
+
+    .cost-img-full {
+        cursor: pointer;
     }
 }

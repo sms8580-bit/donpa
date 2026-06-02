@@ -2,6 +2,10 @@ body {
     background-color: #ffffff;
 }
 
+.store-section {
+    background-color: #F5EDD8;
+}
+
 /* Store Page Hero Section */
 .store-hero {
     background-image: url('../Image/store_hero.webp');
@@ -10,13 +14,14 @@ body {
 }
 
 .store-search {
-    background: #30221F;
+    background: #ffffff;
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 20px;
     display: flex;
     gap: 15px;
-    border: 1px solid #30221F;
+    border: 1px solid #e2d8c5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
 .store-search input {
@@ -75,12 +80,12 @@ body {
 }
 
 .store-items::-webkit-scrollbar-thumb {
-    background: #30221F;
+    background: #FAA843;
     border-radius: 12px;
 }
 
 .store-items::-webkit-scrollbar-thumb:hover {
-    background-color: #30221F;
+    background-color: #FAA843;
 }
 
 .store-card {
@@ -98,7 +103,7 @@ body {
 
 .store-card:hover,
 .store-card.selected {
-    border-color: #30221F;
+    border-color: #FAA843;
     background: #fff;
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(181, 153, 110, 0.15);
@@ -121,7 +126,7 @@ body {
 }
 
 .store-card p i {
-    color: #30221F;
+    color: #FAA843;
     font-size: 1.1rem;
 }
 
@@ -137,7 +142,7 @@ body {
 .store-photo-container {
     border-radius: 30px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
     flex: 1;
     height: 100%;
     position: relative;
@@ -226,7 +231,7 @@ body {
     }
 
     .store-items::-webkit-scrollbar-thumb {
-        background: #30221F !important;
+        background: #FAA843 !important;
         border-radius: 10px !important;
     }
 

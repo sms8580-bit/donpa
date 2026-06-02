@@ -89,9 +89,7 @@
             </div>
         </section>
 
-
-
-        <section class="process-section reveal">
+        <section class="process-section">
             <div class="container reveal">
                 <div class="origin-header centered">
                     <span class="origin-subtitle">PROCESS</span>
@@ -105,8 +103,8 @@
             </div>
         </section>
 
-        <section class="franchise-cost reveal">
-            <div class="container">
+        <section class="franchise-cost">
+            <div class="container reveal">
 
                 <div class="cost-accordion active">
                     <div class="cost-accordion-header">
@@ -120,8 +118,7 @@
                         </div>
 
                         <div class="table-responsive">
-                            <img src="Image/franchise/cost_guide.webp" alt="창업 비용 안내 이미지"
-                                class="cost-img-full">
+                            <img src="Image/franchise/cost_guide.webp" alt="창업 비용 안내 이미지" class="cost-img-full">
                         </div>
                         <p class="cost-note">※ 위 사항은 점포 여건에 따라 변경될 수 있습니다</p>
                         <p class="cost-note">※ 매월 로열티(돈빠 브랜드에 대한 상권내 독점사용)는 30만원 (VAT별도)입니다</p>
@@ -132,8 +129,8 @@
             </div>
         </section>
 
-        <section class="faq-section reveal">
-            <div class="container">
+        <section class="faq-section">
+            <div class="container reveal">
                 <div class="origin-header">
                     <span class="origin-subtitle">FAQ</span>
                     <h2 class="origin-title">자주 묻는<span class="highlight">질문</span></h2>
@@ -187,8 +184,8 @@
             </div>
         </section>
 
-        <section class="franchise-contact reveal" id="contact">
-            <div class="container">
+        <section class="franchise-contact" id="contact">
+            <div class="container reveal">
                 <div class="contact-grid">
                     <div class="contact-info">
                         <span class="origin-subtitle">GET IN TOUCH</span>
@@ -413,6 +410,42 @@
                 });
         });
 
+    </script>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="modal modal-image">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script>
+        // 모바일 버전에서만 창업비용 안내 이미지 클릭 시 크게 보기
+        const costImg = document.querySelector('.cost-img-full');
+        const imgModal = document.getElementById('image-modal');
+        const imgModalImg = document.getElementById('modal-img');
+        const imgModalClose = imgModal.querySelector('.close-modal');
+
+        if (costImg && imgModal && imgModalImg) {
+            costImg.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    imgModalImg.src = costImg.src;
+                    imgModal.classList.add('show');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+
+            imgModalClose.addEventListener('click', () => {
+                imgModal.classList.remove('show');
+                document.body.style.overflow = '';
+            });
+
+            imgModal.addEventListener('click', (e) => {
+                if (e.target === imgModal) {
+                    imgModal.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
     </script>
 </body>
 

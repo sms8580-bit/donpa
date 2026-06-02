@@ -144,7 +144,7 @@
 
 
 .menu-section {
-    background-color: #ffffff;
+    background-color: #F5EDD8;
 }
 
 .menu-section .section-header.left-align h2 {
@@ -222,14 +222,14 @@
 
 
 .origin-section {
-    background-color: var(--bg-color);
+    background-color: #f1f1f1;
     /* Match FAQ section theme */
     color: #30221F;
     padding: 100px 5%;
 }
 
 .origin-header .origin-title {
-    color: #ffffff;
+    color: #1f1414;
 }
 
 .origin-grid {
